@@ -4,14 +4,17 @@
 		<div class="block cf" id="collection_block">
 		 <div class="block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 		 <div class="collection_block_content cf">
-			 <div class="collection_block_content_item"></div>
+			 <div class="collection_block_content_item">
+				 <!-- <img  src="http://localhost:8082/wordpress/wp-content/uploads/2018/10/20160519_160134-e1539192968348.jpg"> -->
+			 </div>
 			 <div class="collection_block_content_item"></div>
 			 <div class="collection_block_content_item"></div>
 		 </div>
 		</div>
 		<div class="block cf" id="portfolio_block">
 		 <div class="portfolio_block_content cf">
-			 <div class="portfolio_block_content_item"></div>
+			 <div class="portfolio_block_content_item">
+			 </div>
 			 <div class="portfolio_block_content_item"></div>
 			 <div class="portfolio_block_content_item"></div>
 			 <div class="portfolio_block_content_item"></div>
@@ -24,14 +27,5 @@
 		 </div>
 		</div>
 	</main>
-	<div class="block" id="footer_block">
-		<div class="footer_block_left">
-		</div>
-		<div class="footer_block_right">
-		</div>
-	</div>
-</div>
-
-<!-- <?php // get_sidebar(); ?> -->
 
 <?php get_footer(); ?>

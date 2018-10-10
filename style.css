@@ -2767,8 +2767,7 @@ body .container {
   body .container .block {
     position: relative;
     width: 100%;
-    height: 300px;
-    border: solid 1px magenta;
+    height: 400px;
     background: white; }
     body .container .block .block_title {
       position: relative;
@@ -2813,71 +2812,67 @@ body .container {
     position: relative;
     height: 100%;
     width: 60%;
-    background: purple;
-    border: 10px white solid;
     display: inline-block;
-    float: right; }
+    float: right;
+    border-top: 1.5px dashed #98838A; }
     body .container #collection_block .collection_block_content .collection_block_content_item {
       position: relative;
       height: 100%;
       width: 33.3%;
-      background: white;
-      border: 1px solid red;
+      border-right: 1px solid red;
       display: inline-block;
       float: left; }
   body .container #portfolio_block .portfolio_block_content {
     position: relative;
     height: 100%;
     width: 80%;
-    background: #536164;
-    display: inline-flex;
-    justify-content: space-around;
-    float: left; }
-    body .container #portfolio_block .portfolio_block_content h1 {
-      align-self: center; }
+    display: inline-block;
+    float: left;
+    border-top: 1.5px dashed #536164; }
     body .container #portfolio_block .portfolio_block_content .portfolio_block_content_item {
       position: relative;
       height: 100%;
       width: 25%;
-      background: white;
-      border: 1px solid red;
+      border-right: 1px solid red;
       display: inline-block;
       float: left; }
   body .container #portfolio_block #portfolio_block_title {
-    background: blue;
+    background: #536164;
     width: 20%;
-    border: 10px white solid;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: space-around;
     float: right; }
+    body .container #portfolio_block #portfolio_block_title h1 {
+      align-self: center; }
   body .container #maak_block #maak_block_title {
-    background: brown;
+    background: #946C54;
     width: 40%;
-    border: 10px white solid;
-    display: inline-block; }
+    display: inline-flex;
+    justify-content: space-around; }
+    body .container #maak_block #maak_block_title h1 {
+      align-self: center; }
   body .container #maak_block .maak_block_content {
     position: relative;
     height: 100%;
     width: 60%;
-    background: brown;
-    border: 10px white solid;
     display: inline-block;
-    float: right; }
-  body .container #footer_block .footer_block_left {
-    position: relative;
-    height: 100%;
-    width: 40%;
-    background: yellow;
-    border: 10px white solid;
-    display: inline-block; }
-    body .container #footer_block .footer_block_left .footer_block_left_list {
-      font-size: .75em; }
-  body .container #footer_block .footer_block_right {
-    position: relative;
-    height: 100%;
-    width: 60%;
-    background: yellow;
-    border: 10px white solid;
-    display: inline-block;
-    float: right; }
-
-/*# sourceMappingURL=style.css.map */
+    float: right;
+    border-top: 1.5px dashed #946C54; }
+  body .container #footer_block {
+    height: 200px; }
+    body .container #footer_block .footer_block_left {
+      position: relative;
+      height: 100%;
+      width: 40%;
+      display: inline-block;
+      padding: 20px;
+      border-right: 1.5px dashed #98838A; }
+      body .container #footer_block .footer_block_left .footer_block_left_list {
+        font-size: .75em; }
+    body .container #footer_block .footer_block_right {
+      position: relative;
+      height: 100%;
+      width: 60%;
+      display: inline-block;
+      float: right;
+      border-top: 1.5px dashed #98838A; }
