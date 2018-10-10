@@ -4,7 +4,7 @@
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-		<link href="//www.google-analytics.com" rel="dns-prefetch">
+		<!-- <link href="//www.google-analytics.com" rel="dns-prefetch"> -->
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
@@ -29,22 +29,42 @@
 		<div class="wrapper">
 
 			<!-- header -->
-			<header class="header clear" role="banner">
+			<!-- <header class="header clear" role="banner"> -->
 
 					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
+					<!-- <div class="logo">
+						<a href="<?php echo home_url(); ?>"> -->
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+							<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
 						</a>
-					</div>
+					</div> -->
 					<!-- /logo -->
 
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
+
+
+						<div class="container">
+
+							<!-- nav -->
+							<nav class="nav" role="navigation">
+							  <div class=" cf" id="nav_block">
+							    <div class="nav_block_left cf">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img">
+							       <!-- <ul class="nav_block_left_list">
+							        <li>COLLECTIE</li>
+							        <li>PORTFOLIO</li>
+							        <li>MAAK</li>
+							       </ul> -->
+										 <?php html5blank_nav(); ?>
+							    </div>
+							    <div class="nav_block_right">
+							      <div class="nav_block_right_content">
+							        <span>over</span><span>nl</span><span>/</span><span>en</span>
+							      </div>
+							    </div>
+							  </div>
+							</nav>
+
 					<!-- /nav -->
 
-			</header>
+			<!-- </header> -->
 			<!-- /header -->

@@ -1,0 +1,210 @@
+/**
+ * Theme Name:       	Ditt Bags
+ * Theme URI:        	http://dittbags.com
+ * Version:          	1.0.0
+ * Author:           	Samantha Griffith
+ */
+
+@import "screen";
+@import "normalize";
+@import "init";
+@import "typography";
+@import "font-awesome";
+
+html {
+	font-size: 20px; // 1REM
+	@media screen and (max-width: $break-medium) {
+		font-size: 15px; // 1REM
+	}
+}
+
+// SITE SPACING
+$spacing: 20px;
+$left-proportion: 40%;
+$right-proportion: 60%;
+$twenty-percent: 20%;
+$width: width;
+$border: 1.5px dashed;
+
+// SITE COLORS
+$black: #020302;
+$dblue: #536164;
+$lblue: #D5DADD;
+$dpurple: #98838A;
+$lpurple: #DDD4D7;
+$dbrown: #946C54;
+$lbrown: #C6B6AD;
+
+
+
+body {
+	width: 100vw;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	visibility: visible!important;
+}
+// Global
+li,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+	// START HERE
+
+	body {
+	  .container {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    .block {
+	      position: relative;
+	      width: 100%;
+	      height: 300px;
+	      border: solid 1px magenta;
+	      background: white;
+	      .block_title {
+	        position: relative;
+	        height: 100%;
+	        text-align: center;
+	      }
+	    }
+	    #nav_block {
+				height:100px;
+	      .nav_block_left {
+	        position: relative;
+	        height: 100%;
+	        width: $left-proportion;
+					padding:$spacing;
+	        display: inline-block;
+					border-right: $border $dpurple;
+	        img{
+	          height:100%;
+	        }
+	        #nav_block_left_list{
+	          font-size: .75em;
+	           text-align:right;
+	           float:right;
+	        }
+	      }
+	      .nav_block_right {
+	        position: relative;
+	        height: 100%;
+	        width: $right-proportion;
+					padding:$spacing;
+	        display: inline-block;
+	        float: right;
+	        .nav_block_right_content{
+	          font-size: .75em;
+	           text-align:right;
+	           float:right;
+	           span{
+	             margin-right: 5px;
+	           }
+	        }
+	      }
+	    }
+	    #collection_block {
+	      #collection_block_title {
+	        background: $dpurple;
+	        width: $left-proportion;
+	        display: inline-flex;
+					justify-content: space-around;
+					h1{
+						align-self:center;
+					}
+	      }
+	      .collection_block_content{
+	        position: relative;
+	        height: 100%;
+	        width: $right-proportion;
+	        background: purple;
+	        border: 10px white solid;
+	        display: inline-block;
+	        float: right;
+	        .collection_block_content_item{
+	          position: relative;
+	          height: 100%;
+	          width: 33.3%;
+	          background:white;
+	          border: 1px solid red;
+	          display:inline-block;
+	          float:left;
+	        }
+	      }
+	    }
+	    #portfolio_block{
+	      .portfolio_block_content{
+	        position: relative;
+	        height: 100%;
+	        width: $twenty-percent*4;
+	        background: $dblue;
+					display: inline-flex;
+					justify-content: space-around;
+					h1{
+						align-self:center;  
+					}
+	        float:left;
+	        .portfolio_block_content_item{
+	          position: relative;
+	          height: 100%;
+	          width: 25%;
+	          background:white;
+	          border: 1px solid red;
+	          display:inline-block;
+	          float:left;
+	        }
+	      }
+	      #portfolio_block_title{
+	        background: blue;
+	        width: $twenty-percent;
+	        border: 10px white solid;
+	        display: inline-block;
+	        float:right;
+	      }
+	    }
+	    #maak_block{
+	      #maak_block_title {
+	        background: brown;
+	        width: $left-proportion;
+	        border: 10px white solid;
+	        display: inline-block;
+	      }
+	      .maak_block_content{
+	        position: relative;
+	        height: 100%;
+	        width: $right-proportion;
+	        background: brown;
+	        border: 10px white solid;
+	        display: inline-block;
+	        float: right;
+	      }
+	    }
+	    #footer_block{
+	       .footer_block_left {
+	        position: relative;
+	        height: 100%;
+	        width: $left-proportion;
+	        background: yellow;
+	        border: 10px white solid;
+	        display: inline-block;
+	        .footer_block_left_list{
+	          font-size: .75em;
+	        }
+	      }
+	      .footer_block_right {
+	        position: relative;
+	        height: 100%;
+	        width: $right-proportion;
+	        background: yellow;
+	        border: 10px white solid;
+	        display: inline-block;
+	        float: right;
+	      }
+	    }
+	  }
+	}
