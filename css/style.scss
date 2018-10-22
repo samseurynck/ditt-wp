@@ -72,6 +72,9 @@ ul {
 	        text-align: center;
 	      }
 	    }
+
+			//////// NAVIGATION
+
 	    #nav_block {
 				height:100px;
 	      .nav_block_left {
@@ -107,6 +110,9 @@ ul {
 	        }
 	      }
 	    }
+
+			//////// HOMEPAGE ////////
+
 	    #collection_block {
 	      #collection_block_title {
 	        background: $dpurple;
@@ -176,11 +182,125 @@ ul {
 	        position: relative;
 	        height: 100%;
 	        width: $right-proportion;
-	        display: inline-block;
+					display: inline-flex;
+					justify-content: space-between;
+					flex-direction: column;
+					// align-items: center;
 	        float: right;
 					border-top: $border $dbrown;
+					padding: 0 $spacing*4 0 $spacing*4;
+					.maak_block_content_top{
+						// align-self:flex-start;
+						align-self:center;
+						width: 50px;
+						height: $spacing*2;
+						border-bottom: $border $dbrown;
+					}
+					.maak_block_content_bottom{
+						// align-self:flex-end;
+						align-self:center;
+						padding-bottom: $spacing*2;
+					}
+					p{
+						align-self:center;
+						text-align: center;
+					}
 	      }
 	    }
+
+			//////// PORTFOLIO ////////
+
+			#tassen_block {
+				#tassen_block_title {
+					width: $left-proportion;
+					border-top: $border $dpurple;
+					display: inline-block;
+					height:200px;
+					}
+					.tassen_block_hero{
+						width: $right-proportion;
+						height:200px;
+						display: inline-block;
+						float:right;
+						background:tomato;
+					}
+					.tassen_block_gallery{
+						position:relative;
+						width:100%;
+						height:100px;
+						background: purple;
+					}
+				}
+
+			//////// COLLECTIE ////////
+
+			#item_block {
+				height:auto;
+				.item_block_left {
+					position: relative;
+					height: 100%;
+					width: $left-proportion;
+					background: $lpurple;
+					display: inline-block;
+					border-top: $border white;
+					// img{
+					// 	width: 100%;
+					// 	height:100%;
+					// 	display:inline-block;
+					// }
+				}
+				.item_block_right_selected{
+					background: white !important;
+					color: $dpurple !important;
+					border-top: $border $dpurple !important;
+				}
+				.item_block_right{
+					width: $right-proportion;
+					height:100%;
+					display:inline-flex;
+					flex-direction: column;
+					background: $dpurple;
+					float:right;
+					border-top: $border white;
+					color:white;
+					padding: $spacing;
+					.item_block_right_header{
+						display:flex;
+						width:100%;
+						padding-bottom: $spacing*2;
+						.item_block_right_header_list{
+							width: $right-proportion;
+						}
+						.item_block_right_viewoptions{
+							width: $left-proportion;
+							align-self: flex-end;
+							text-align: right;
+							cursor: pointer;
+						}
+					}
+					.item_block_right_details{
+						display:none;
+						.item_block_right_details_specs{
+							width: 60%;
+							float:left;
+							padding-bottom: $spacing;
+						}
+						.item_block_right_details_kleuren{
+							width: 40%;
+							float:right;
+							padding: 0 0 $spacing $spacing;
+						}
+						.item_block_right_details_ordering{
+							width: 60%;
+							float:left;
+							padding-bottom: $spacing;
+						}
+					}
+				}
+			}
+
+			//////// FOOTER ////////
+
 	    #footer_block{
 				height:200px;
 	       .footer_block_left {

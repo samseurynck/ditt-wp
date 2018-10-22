@@ -9,22 +9,6 @@
 			    </div>
 			  </div>
 			</main>
-		  <div class="block" id="footer_block">
-		    <div class="footer_block_left">
-		      <ul class="footer_block_left_list">
-		        <li>lorem ipsum</li>
-		        <li>lorem ipsum</li>
-		        <li>lorem ipsum</li>
-		      </ul>
-		    </div>
-		    <div class="footer_block_right">
-		    </div>
-		  </div>
-		</div>
 
-
-
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

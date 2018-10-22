@@ -1,17 +1,38 @@
-$dark-blue: #9CC3B5;
-$dark-brown: #623E1E;
-$light-brown: #A15713;
-$serif: 'Vollkorn', serif;
-// $sans: 'Montserrat', Arial, sans-serif;
-$sans: 'Open Sans', sans-serif;
-// $serif: 'Source Serif Pro', serif;
-// $sans: 'Source Sans Pro', sans-serif;
+// SITE SPACING
 $spacing: 20px;
+$left-proportion: 40%;
+$right-proportion: 60%;
+$twenty-percent: 20%;
+$width: width;
+$border: 1.5px dashed;
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+// SITE COLORS
+$black: #020302;
+$dblue: #536164;
+$lblue: #D5DADD;
+$dpurple: #98838A;
+$lpurple: #DDD4D7;
+$dbrown: #946C54;
+$lbrown: #C6B6AD;
+
+@font-face {
+  font-family: Reader;
+  src: url('fonts/reader-regular-webfont.woff2') format('woff2'),
+    url('fonts/reader-regular-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: ReaderBold;
+  src: url('fonts/reader-bold-webfont.woff2') format('woff2'),
+    url('fonts/reader-bold-webfont.woff') format('woff');
+}
 
 body {
 	font-smooth: always;
  	-webkit-font-smoothing: antialiased;
-	font-family: $sans;
+	font-family: 'Reader', Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 1rem;
 	line-height: 1.2;
@@ -25,386 +46,129 @@ h1, h2, h3, h4, h5 {
 }
 
 h1{
-	font-family: $serif;
-	font-size: 2em;
-	letter-spacing: -1px;
-	font-weight: 500;
+	font-size: 1.5em;
+	letter-spacing: .75px;
+	font-weight: 700;
+	color: white;
 }
 
 h2{
-	font-family: $serif;
 	font-size: 2em;
-	letter-spacing: -1px;
 	font-weight: 500;
-
-	// @media screen and (max-width: $break-small) {
-	// 	font-size: 1.5em;
-	// }
-}
-
-.current-title{
-	font-size: .75em;
-	font-weight: 400;
-	color: $light-brown;
-
-	@media screen and (max-width: $break-small) {
-		font-size: 1em;
-		}
 }
 
 h3{
-	font-size: .75em;
-	line-height: 1.5;
+	font-size: 1em;
+	font-weight: 500;
 }
 
-
-// Homepage
-.nav-home{
-	.season , .year{
-		font-size: 3em;
-		line-height: 1em;
-		font-family: $serif;
-		font-weight: 300;
-		letter-spacing: -2px;
-	}
-}
-// Homepage articles
-.nav-home-articles li{
-	.title{
-		font-family: $serif;
-		font-size: 1em;
-		font-weight: 400;
-		line-height: 1.5em;
-		letter-spacing: -.5px;
-
-		@media screen and (max-width: $break-small) {
-			font-size: 1.5em;
-		}
-	}
-	.author{
-		font-size: .75em;
-		font-weight: 300;
-		line-height: 1.5em;
-
-		@media screen and (max-width: $break-small) {
-			font-size: 1.25em;
-		}
-	}
-}
-
-
-.nav-main{
-		font-size: .75em;
-		font-weight: 400;
-
-		ul{
-			li{
-				@media screen and (max-width: $break-small) {
-					font-size: 2em;
-				}
-			}
-		}
-	}
-
-
-
-.right{
-	#header{
-		a{
-			font-size: .6em;
-			font-weight: 400;
-		}
-
-		:hover{
-			color: $dark-blue;
-		}
-	}
-
-	.content-past-issues{
-			font-size: .6em;
-			font-weight: 400;
-
-			@media screen and (max-width: $break-small) {
-				font-size: 1em;
-			}
-
-			.season, .year{
-				font-family: $serif;
-				font-size: 2em;
-				letter-spacing: -1px;
-			}
-	}
-}
-
-#about-sub-nav-content, h4{
-	font-size: .75em;
-	font-weight: 400;
-	line-height: 1.25em;
-
-	@media screen and (max-width: $break-medium) {
-		font-size: 1em;
-	}
-
-	li:hover{
-		color: $dark-blue;
-	}
-}
-
-.about-content .title{
-	font-size: 1.25em;
-	font-family: $serif;
-	font-weight: 400;
-	line-height: 1.5em;
-	text-align: center;
-	margin-right: $spacing;
-}
-
-.about-content{
-
-	.content-text{
-		font-size: 1em;
-		font-weight: 300;
-		line-height: 2em;
-	}
-
-	a{
-		color: $light-brown;
-	}
-
-	a:hover{
-		color: $dark-blue;
-	}
-
-	strong{
-		font-weight: 600;
-	}
-
-	em{
-		font-weight: 400i;
-		// font-style: italic;
-	}
-
-	blockquote {
-		padding-right: 0px;
-		margin: $spacing*2 0px $spacing*2 $spacing*4;
-
-		@media screen and (max-width: $break-small) {
-			margin: $spacing*2 0px $spacing*2 0;
-		}
-
-		p{
-		margin-right:0px;
-		padding-right: 0px;
-		text-align:right;
-		font-family: $sans;
-		font-weight: 300;
-		font-size: 1.5em;
-		line-height: 1.5em;
-		}
-	}
-}
-
-
-// ARTICLE PAGE
-
-// left
-
-.left-article{
-
-	.nav-article{
-
-			.title,	.year{
-				font-family: $serif;
-				font-size: 3em;
-				letter-spacing: -1px;
-				font-weight: 500;
-			}
-
-		.articles{
-			li{
-				&:not(.activeArticle){
-					&:hover span{
-						color: $dark-blue;
-						padding-left: .25em;
-					}
-				}
-				.title{
-					font-family: $sans;
-					font-size: .75em;
-					font-weight: 400;
-					line-height: 1.5em;
-					letter-spacing: -.5px;
-					color: $dark-brown;
-				}
-
-				.author{
-					font-size: .75em;
-					font-weight: 300;
-					line-height: 1.25em;
-					color: $dark-brown;
-				}
-
-				@media screen and (max-width: $break-small) {
-					.title span{
-						font-size: 1.5em;
-						line-height: 1;
-						margin-bottom: .125em;
-					}
-
-					.author span{
-						font-size: 1em;
-						line-height: 1.6;
-					}
-				}
-			}
-		}
-	}
-}
-
-// right
-.right-article{
-	.header{
-		.title{
-			margin: 0 0 $spacing 0;
-		}
-		#left{
-			span{
-				font-size: .75em;
-				font-weight: 400;
-			}
-		}
-		#right{
-				font-size: .75em;
-				font-weight: 500;
-				line-height: 3em;
-				color: $dark-blue;
-			}
-		}
-	}
-
-// Article Content Styling
-.right-article{
-		// .content > p:nth-child(1):first-letter {
-		// 	float: left;
-		// 	font-size: 4.5em;
-		// 	line-height: 60px;
-		// 	padding-top: $spacing;
-		// 	padding-right: $spacing;
-		// }
-
-	.content-article .content{
-			text-rendering: optimizeLegibility;
-
-		p{
-			font-family: $serif;
-			font-size: 1em;
-			font-weight: 400;
-			line-height: 1.35em;
-
-			// margin: 0px $spacing $spacing $spacing;
-
-			@media screen and (max-width: $break-medium) {
-				font-size: 1.25em;
-				letter-spacing: .25px;
-			}
-
-			a{
-				color: $light-brown;
-			}
-
-			strong{
-				font-weight: 600;
-			}
-
-			em{
-				font-weight: 400i;
-				// font-style: italic;
-			}
-		}
-
-		blockquote {
-			padding-right: 0px;
-			margin: $spacing*2 0px $spacing*2 $spacing*4;
-
-			@media screen and (max-width: $break-small) {
-				margin: $spacing*2 0px $spacing*2 0;
-			}
-
-			p{
-			margin-right:0px;
-			padding-right: 0px;
-			text-align:right;
-			font-family: $sans;
-			font-weight: 300;
-			font-size: 1.5em;
-			line-height: 1.5em;
-			}
-
-		}
-	}
-}
-
-
- // Find Us Content Styling
-
- .left-findUs{
- 	.section{
-		.title{
-			margin: 0 0 $spacing 0;
-		}
- 		.content-text{
- 			font-size: .75em;
-			line-height: 1.2em;
-
-			@media screen and (max-width: $break-small) {
-				font-size: 1em;
-				line-height: 1.25em;
-			}
- 		}
- 	}
- }
-
-::selection {
-}
-::-moz-selection {
-}
-
-
-.btn {
-	cursor: pointer;
-}
-
-// Small 14px
-footer {
-	font-size: .8em;
-}
-
-p {
-	margin-top: 0;
-	margin-bottom: 2em;
-}
-
-p:last-child {
-	margin-bottom: 0;
-}
-
-a {
-	color: inherit;
+a{
+	list-style: none;
 	text-decoration: none;
 }
 
-// a:hover {
-// 	color: $dark-blue;
-// }
+//////// GLOBAL
 
-a:focus {
-    outline: none;
+#collectie-link{
+	#{$a-tags} {
+	  color: $lpurple;
+	}
+	#{$a-tags-hover} {
+	  color: $dpurple;
+	}
 }
 
-.align-right {
-	text-align: right;
+#portfolio-link{
+	#{$a-tags} {
+	  color: $lblue;
+	}
+	#{$a-tags-hover} {
+	  color: $dblue;
+	}
 }
 
-.align-left {
-	text-align: left;
+#maak-link{
+	#{$a-tags} {
+	  color: $lbrown;
+	}
+	#{$a-tags-hover} {
+	  color: $dbrown;
+	}
+}
+
+
+
+//////// NAVIGATION
+
+#nav_block{
+	#{$a-tags} {
+	  color: $lpurple;
+	}
+	#{$a-tags-hover} {
+	  color: $dpurple;
+	}
+}
+
+//////// HOMEPAGE
+
+main{
+	// #{$a-tags} {
+	//   color: $lpurple;
+	// }
+	// #{$a-tags-hover} {
+	//   color: $dpurple;
+	// }
+	.maak_block_content{
+		color: $dbrown;
+	}
+}
+
+//////// COLLECTIE
+
+.item_block_right{
+	.item_block_right_header{
+		#product_title{
+			font-size: 2em;
+			// line-height: 2em;
+		}
+		#product_subtitle{
+			font-size: .75em;
+			line-height: 2em;
+		}
+		.item_block_right_viewoptions{
+			color: $lpurple;
+			font-size: .75em;
+			&:hover {
+				color: white;
+			}
+		}
+		.item_block_right_viewoptions_selected{
+			color: $lpurple !important;
+			&:hover {
+				color: $dpurple !important;
+			}
+		}
+	}
+
+	.item_block_right_details_specstitle, .item_block_right_details_orderingtitle, #item_block_right_details_kleuren_title{
+		font-family: 'ReaderBold';
+		font-size: .5em;
+		letter-spacing: .5px;
+		line-height: 2em;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.item_block_right_details_specslist{
+		padding-bottom: $spacing;
+		font-size: .75em;
+		li{
+			list-style: circle !important;
+			list-style-position: inside !important;
+		}
+	}
+	.item_block_right_details_orderingp{
+		font-size: .75em;
+		margin:0;
+		line-height: 1.5em;
+	}
 }

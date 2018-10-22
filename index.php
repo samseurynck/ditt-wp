@@ -24,6 +24,9 @@
 		<div class="block cf" id="maak_block">
 		 <div class="block_title" id="maak_block_title"><h1>MAAK</h1></div>
 		 <div class="maak_block_content">
+			 <div class="maak_block_content_top"></div>
+			 <p>Houd je van leer, leren tassen en wil je zelf je tas maken? Neem alvast contact op, dit wordt namelijk binnenkort mogelijk!</p>
+			 <div class="maak_block_content_bottom" id="maak-link"><h3><a href="<?php echo get_template_directory_uri(); ?> /maak"> Binnenkort beschikbaar</a></h3></div>
 		 </div>
 		</div>
 	</main>

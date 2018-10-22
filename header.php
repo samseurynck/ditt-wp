@@ -50,7 +50,7 @@
 							<nav class="nav" role="navigation">
 							  <div class=" cf" id="nav_block">
 							    <div class="nav_block_left cf">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img">
+										<a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img"></a>
 							       <!-- <ul class="nav_block_left_list">
 							        <li>COLLECTIE</li>
 							        <li>PORTFOLIO</li>
