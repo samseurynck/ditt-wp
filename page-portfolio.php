@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<main role="main">
+			<main role="main" class="site-content">
 			  <div class="block cf" id="tassen_block">
 			    <div class="block_title cf" id="tassen_block_title">tassen</div>
 			    <div class="tassen_block_hero cf">

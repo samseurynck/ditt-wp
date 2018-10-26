@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" class="site-content">
 		<div class="block cf" id="item_block">
 	    <div class="item_block_left cf">
 				img img img make this a backstretch slideshow that autoplays when item is selected

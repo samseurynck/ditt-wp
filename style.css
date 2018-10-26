@@ -2600,12 +2600,6 @@ html {
     html {
       font-size: 15px; } }
 
-body {
-  width: 100vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  visibility: visible !important; }
-
 li,
 ol,
 ul {
@@ -2613,199 +2607,215 @@ ul {
   padding: 0;
   list-style: none; }
 
-body .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-  body .container .block {
-    position: relative;
+html, body {
+  height: 100vh; }
+
+body {
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  visibility: visible !important; }
+  body .container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 400px;
-    background: white; }
-    body .container .block .block_title {
-      position: relative;
-      height: 100%;
-      text-align: center; }
-  body .container #nav_block {
-    height: 100px; }
-    body .container #nav_block .nav_block_left {
-      position: relative;
-      height: 100%;
-      width: 40%;
-      padding: 20px;
-      display: inline-block;
-      border-right: 1.5px dashed #98838A; }
-      body .container #nav_block .nav_block_left img {
-        height: 100%; }
-      body .container #nav_block .nav_block_left #nav_block_left_list {
-        font-size: .75em;
-        text-align: right;
-        float: right; }
-    body .container #nav_block .nav_block_right {
-      position: relative;
-      height: 100%;
-      width: 60%;
-      padding: 20px;
-      display: inline-block;
-      float: right; }
-      body .container #nav_block .nav_block_right .nav_block_right_content {
-        font-size: .75em;
-        text-align: right;
-        float: right; }
-        body .container #nav_block .nav_block_right .nav_block_right_content span {
-          margin-right: 5px; }
-  body .container #collection_block #collection_block_title {
-    background: #98838A;
-    width: 40%;
-    display: inline-flex;
-    justify-content: space-around; }
-    body .container #collection_block #collection_block_title h1 {
-      align-self: center; }
-  body .container #collection_block .collection_block_content {
-    position: relative;
     height: 100%;
-    width: 60%;
-    display: inline-block;
-    float: right;
-    border-top: 1.5px dashed #98838A; }
-    body .container #collection_block .collection_block_content .collection_block_content_item {
-      position: relative;
-      height: 100%;
-      width: 33.3%;
-      border-right: 1px solid red;
-      display: inline-block;
-      float: left; }
-  body .container #portfolio_block .portfolio_block_content {
-    position: relative;
-    height: 100%;
-    width: 80%;
-    display: inline-block;
-    float: left;
-    border-top: 1.5px dashed #536164; }
-    body .container #portfolio_block .portfolio_block_content .portfolio_block_content_item {
-      position: relative;
-      height: 100%;
-      width: 25%;
-      border-right: 1px solid red;
-      display: inline-block;
-      float: left; }
-  body .container #portfolio_block #portfolio_block_title {
-    background: #536164;
-    width: 20%;
-    display: inline-flex;
-    justify-content: space-around;
-    float: right; }
-    body .container #portfolio_block #portfolio_block_title h1 {
-      align-self: center; }
-  body .container #maak_block #maak_block_title {
-    background: #946C54;
-    width: 40%;
-    display: inline-flex;
-    justify-content: space-around; }
-    body .container #maak_block #maak_block_title h1 {
-      align-self: center; }
-  body .container #maak_block .maak_block_content {
-    position: relative;
-    height: 100%;
-    width: 60%;
-    display: inline-flex;
-    justify-content: space-between;
+    min-height: 100%;
+    display: flex;
     flex-direction: column;
-    float: right;
-    border-top: 1.5px dashed #946C54;
-    padding: 0 80px 0 80px; }
-    body .container #maak_block .maak_block_content .maak_block_content_top {
-      align-self: center;
-      width: 50px;
-      height: 40px;
-      border-bottom: 1.5px dashed #946C54; }
-    body .container #maak_block .maak_block_content .maak_block_content_bottom {
-      align-self: center;
-      padding-bottom: 40px; }
-    body .container #maak_block .maak_block_content p {
-      align-self: center;
-      text-align: center; }
-  body .container #tassen_block #tassen_block_title {
-    width: 40%;
-    border-top: 1.5px dashed #98838A;
-    display: inline-block;
-    height: 200px; }
-  body .container #tassen_block .tassen_block_hero {
-    width: 60%;
-    height: 200px;
-    display: inline-block;
-    float: right;
-    background: tomato; }
-  body .container #tassen_block .tassen_block_gallery {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background: purple; }
-  body .container #item_block {
-    height: auto; }
-    body .container #item_block .item_block_left {
+    align-items: stretch; }
+    body .container .site-content {
+      flex-grow: 1; }
+    body .container .block {
       position: relative;
-      height: 100%;
-      width: 40%;
-      background: #DDD4D7;
-      display: inline-block;
-      border-top: 1.5px dashed white; }
-    body .container #item_block .item_block_right_selected {
-      background: white !important;
-      color: #98838A !important;
-      border-top: 1.5px dashed #98838A !important; }
-    body .container #item_block .item_block_right {
-      width: 60%;
-      height: 100%;
-      display: inline-flex;
-      flex-direction: column;
-      background: #98838A;
-      float: right;
-      border-top: 1.5px dashed white;
-      color: white;
-      padding: 20px; }
-      body .container #item_block .item_block_right .item_block_right_header {
-        display: flex;
-        width: 100%;
-        padding-bottom: 40px; }
-        body .container #item_block .item_block_right .item_block_right_header .item_block_right_header_list {
-          width: 60%; }
-        body .container #item_block .item_block_right .item_block_right_header .item_block_right_viewoptions {
-          width: 40%;
-          align-self: flex-end;
+      width: 100%;
+      height: 400px;
+      background: white; }
+      body .container .block .block_title {
+        position: relative;
+        height: 100%;
+        text-align: center; }
+    body .container #nav_block {
+      height: 100px;
+      flex-shrink: 0; }
+      body .container #nav_block .nav_block_left {
+        position: relative;
+        height: 100%;
+        width: 40%;
+        padding: 20px;
+        display: inline-block;
+        border-right: 1.5px dashed #98838A; }
+        body .container #nav_block .nav_block_left img {
+          height: 100%; }
+        body .container #nav_block .nav_block_left #nav_block_left_list {
+          font-size: .75em;
           text-align: right;
-          cursor: pointer; }
-      body .container #item_block .item_block_right .item_block_right_details {
-        display: none; }
-        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {
-          width: 60%;
-          float: left;
-          padding-bottom: 20px; }
-        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren {
-          width: 40%;
-          float: right;
-          padding: 0 0 20px 20px; }
-        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_ordering {
-          width: 60%;
-          float: left;
-          padding-bottom: 20px; }
-  body .container #footer_block {
-    height: 200px; }
-    body .container #footer_block .footer_block_left {
-      position: relative;
-      height: 100%;
+          float: right; }
+      body .container #nav_block .nav_block_right {
+        position: relative;
+        height: 100%;
+        width: 60%;
+        padding: 20px;
+        display: inline-block;
+        float: right; }
+        body .container #nav_block .nav_block_right .nav_block_right_content {
+          font-size: .75em;
+          text-align: right;
+          float: right; }
+          body .container #nav_block .nav_block_right .nav_block_right_content span {
+            margin-right: 5px; }
+    body .container #collection_block #collection_block_title {
+      background: #98838A;
       width: 40%;
-      display: inline-block;
-      padding: 20px;
-      border-right: 1.5px dashed #98838A; }
-      body .container #footer_block .footer_block_left .footer_block_left_list {
-        font-size: .75em; }
-    body .container #footer_block .footer_block_right {
+      display: inline-flex;
+      justify-content: space-around; }
+      body .container #collection_block #collection_block_title h1 {
+        align-self: center; }
+    body .container #collection_block .collection_block_content {
       position: relative;
       height: 100%;
       width: 60%;
       display: inline-block;
       float: right;
       border-top: 1.5px dashed #98838A; }
+      body .container #collection_block .collection_block_content .collection_block_content_item {
+        position: relative;
+        height: 100%;
+        width: 33.3%;
+        border-right: 1px solid red;
+        display: inline-block;
+        float: left; }
+    body .container #portfolio_block .portfolio_block_content {
+      position: relative;
+      height: 100%;
+      width: 80%;
+      display: inline-block;
+      float: left;
+      border-top: 1.5px dashed #536164; }
+      body .container #portfolio_block .portfolio_block_content .portfolio_block_content_item {
+        position: relative;
+        height: 100%;
+        width: 25%;
+        border-right: 1px solid red;
+        display: inline-block;
+        float: left; }
+    body .container #portfolio_block #portfolio_block_title {
+      background: #536164;
+      width: 20%;
+      display: inline-flex;
+      justify-content: space-around;
+      float: right; }
+      body .container #portfolio_block #portfolio_block_title h1 {
+        align-self: center; }
+    body .container #maak_block #maak_block_title {
+      background: #946C54;
+      width: 40%;
+      display: inline-flex;
+      justify-content: space-around; }
+      body .container #maak_block #maak_block_title h1 {
+        align-self: center; }
+    body .container #maak_block .maak_block_content {
+      position: relative;
+      height: 100%;
+      width: 60%;
+      display: inline-flex;
+      justify-content: space-between;
+      flex-direction: column;
+      float: right;
+      border-top: 1.5px dashed #946C54;
+      padding: 0 80px 0 80px; }
+      body .container #maak_block .maak_block_content .maak_block_content_top {
+        align-self: center;
+        width: 50px;
+        height: 40px;
+        border-bottom: 1.5px dashed #946C54; }
+      body .container #maak_block .maak_block_content .maak_block_content_bottom {
+        align-self: center;
+        padding-bottom: 40px; }
+      body .container #maak_block .maak_block_content p {
+        align-self: center;
+        text-align: center; }
+    body .container #tassen_block #tassen_block_title {
+      width: 40%;
+      border-top: 1.5px dashed #98838A;
+      display: inline-block;
+      height: 200px; }
+    body .container #tassen_block .tassen_block_hero {
+      width: 60%;
+      height: 200px;
+      display: inline-block;
+      float: right;
+      background: tomato; }
+    body .container #tassen_block .tassen_block_gallery {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      background: purple; }
+    body .container #item_block {
+      height: auto; }
+      body .container #item_block .item_block_left {
+        position: relative;
+        height: 100%;
+        width: 40%;
+        background: #DDD4D7;
+        display: inline-block;
+        border-top: 1.5px dashed white; }
+      body .container #item_block .item_block_right_selected {
+        background: white !important;
+        color: #98838A !important;
+        border-top: 1.5px dashed #98838A !important; }
+      body .container #item_block .item_block_right {
+        width: 60%;
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        background: #98838A;
+        float: right;
+        border-top: 1.5px dashed white;
+        color: white;
+        padding: 20px; }
+        body .container #item_block .item_block_right .item_block_right_header {
+          display: flex;
+          width: 100%;
+          padding-bottom: 40px; }
+          body .container #item_block .item_block_right .item_block_right_header .item_block_right_header_list {
+            width: 60%; }
+          body .container #item_block .item_block_right .item_block_right_header .item_block_right_viewoptions {
+            width: 40%;
+            align-self: flex-end;
+            text-align: right;
+            cursor: pointer; }
+        body .container #item_block .item_block_right .item_block_right_details {
+          display: none; }
+          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {
+            width: 60%;
+            float: left;
+            padding-bottom: 20px; }
+          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren {
+            width: 40%;
+            float: right;
+            padding: 0 0 20px 20px; }
+          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_ordering {
+            width: 60%;
+            float: left;
+            padding-bottom: 20px; }
+    body .container #footer_block {
+      height: 200px;
+      flex-shrink: 0; }
+      body .container #footer_block .footer_block_left {
+        position: relative;
+        height: 100%;
+        width: 40%;
+        display: inline-block;
+        padding: 20px;
+        border-right: 1.5px dashed #98838A; }
+        body .container #footer_block .footer_block_left .footer_block_left_list {
+          font-size: .75em; }
+      body .container #footer_block .footer_block_right {
+        position: relative;
+        height: 100%;
+        width: 60%;
+        display: inline-block;
+        float: right;
+        border-top: 1.5px dashed #98838A; }

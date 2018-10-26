@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" class="site-content">
 		<div class="block cf" id="collection_block">
 		 <div class="block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 		 <div class="collection_block_content cf">
