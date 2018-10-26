@@ -262,10 +262,25 @@ a {
 #maak-link a:active, #maak-link a:hover {
   color: #946C54; }
 
-#nav_block a, #nav_block a:active, #nav_block a:hover, #nav_block a:visited {
-  color: #DDD4D7; }
-#nav_block a:active, #nav_block a:hover {
-  color: #98838A; }
+.home_nav #logo {
+  opacity: 1; }
+.home_nav a, .home_nav a:active, .home_nav a:hover, .home_nav a:visited {
+  color: #98838A;
+  opacity: 0.6; }
+.home_nav a:active, .home_nav a:hover {
+  opacity: 1; }
+
+.blue_nav #logo, .brown_nav #logo, .purple_nav #logo {
+  opacity: 1; }
+.blue_nav a, .blue_nav a:active, .blue_nav a:hover, .blue_nav a:visited, .brown_nav a, .brown_nav a:active, .brown_nav a:hover, .brown_nav a:visited, .purple_nav a, .purple_nav a:active, .purple_nav a:hover, .purple_nav a:visited {
+  color: white;
+  opacity: 0.6; }
+.blue_nav a:active, .blue_nav a:hover, .brown_nav a:active, .brown_nav a:hover, .purple_nav a:active, .purple_nav a:hover {
+  opacity: 1; }
+
+#nav_block_left_list, .nav_block_right_submenu {
+  font-size: .75em;
+  text-align: right; }
 
 main .maak_block_content {
   color: #946C54; }
@@ -301,6 +316,19 @@ main .maak_block_content {
   font-size: .75em;
   margin: 0;
   line-height: 1.5em; }
+
+#portfolio_gallery_block .block_title {
+  color: #536164;
+  padding: 20px 0 20px 20px; }
+
+#maak_announcement_block {
+  color: #946C54; }
+  #maak_announcement_block .maak_announcement_text h1 {
+    font-family: 'ReaderBold';
+    font-size: 3em;
+    color: #946C54; }
+  #maak_announcement_block .maak_announcement_text p {
+    font-size: 1.25em; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2608,7 +2636,7 @@ ul {
   list-style: none; }
 
 html, body {
-  height: 100vh; }
+  height: 100%; }
 
 body {
   width: 100vw;
@@ -2636,35 +2664,52 @@ body {
         position: relative;
         height: 100%;
         text-align: center; }
-    body .container #nav_block {
+    body .container .nav #nav_block {
       height: 100px;
       flex-shrink: 0; }
-      body .container #nav_block .nav_block_left {
+      body .container .nav #nav_block .nav_block_left {
         position: relative;
         height: 100%;
         width: 40%;
         padding: 20px;
-        display: inline-block;
-        border-right: 1.5px dashed #98838A; }
-        body .container #nav_block .nav_block_left img {
+        display: inline-block; }
+        body .container .nav #nav_block .nav_block_left img {
           height: 100%; }
-        body .container #nav_block .nav_block_left #nav_block_left_list {
-          font-size: .75em;
-          text-align: right;
+        body .container .nav #nav_block .nav_block_left #nav_block_left_list {
           float: right; }
-      body .container #nav_block .nav_block_right {
+      body .container .nav #nav_block .nav_block_right {
         position: relative;
         height: 100%;
         width: 60%;
         padding: 20px;
         display: inline-block;
         float: right; }
-        body .container #nav_block .nav_block_right .nav_block_right_content {
+        body .container .nav #nav_block .nav_block_right .nav_block_right_submenu {
+          text-align: left;
+          display: block;
+          float: left; }
+        body .container .nav #nav_block .nav_block_right .nav_block_right_options {
           font-size: .75em;
           text-align: right;
           float: right; }
-          body .container #nav_block .nav_block_right .nav_block_right_content span {
+          body .container .nav #nav_block .nav_block_right .nav_block_right_options span {
             margin-right: 5px; }
+    body .container .home_nav {
+      background: white; }
+      body .container .home_nav .nav_block_left {
+        border-right: 1.5px dashed #98838A; }
+    body .container .blue_nav {
+      background: #536164 !important; }
+      body .container .blue_nav .nav_block_left {
+        border-right: 1.5px dashed white; }
+    body .container .brown_nav {
+      background: #946C54 !important; }
+      body .container .brown_nav .nav_block_left {
+        border-right: 1.5px dashed white; }
+    body .container .purple_nav {
+      background: #98838A !important; }
+      body .container .purple_nav .nav_block_left {
+        border-right: 1.5px dashed white; }
     body .container #collection_block #collection_block_title {
       background: #98838A;
       width: 40%;
@@ -2736,22 +2781,30 @@ body {
       body .container #maak_block .maak_block_content p {
         align-self: center;
         text-align: center; }
-    body .container #tassen_block #tassen_block_title {
-      width: 40%;
-      border-top: 1.5px dashed #98838A;
+    body .container #portfolio_gallery_block .block_title {
+      width: 100%;
       display: inline-block;
-      height: 200px; }
-    body .container #tassen_block .tassen_block_hero {
-      width: 60%;
-      height: 200px;
-      display: inline-block;
-      float: right;
-      background: tomato; }
-    body .container #tassen_block .tassen_block_gallery {
+      height: 75px;
+      text-align: left; }
+    body .container #portfolio_gallery_block .gallery_block_gallery {
       position: relative;
       width: 100%;
-      height: 100px;
-      background: purple; }
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: stretch; }
+      body .container #portfolio_gallery_block .gallery_block_gallery .gallery_block_gallery_img {
+        height: 300px;
+        width: 100px;
+        display: inline-block;
+        border: red solid 1px; }
+      body .container #portfolio_gallery_block .gallery_block_gallery .hor {
+        flex-grow: 2;
+        width: 40%; }
+      body .container #portfolio_gallery_block .gallery_block_gallery .vert {
+        flex-shrink: 1;
+        width: 20%; }
     body .container #item_block {
       height: auto; }
       body .container #item_block .item_block_left {
@@ -2800,6 +2853,28 @@ body {
             width: 60%;
             float: left;
             padding-bottom: 20px; }
+    body .container #maak_announcement_block .maak_announcement_img {
+      height: 100vh;
+      width: 40%;
+      display: inline-block;
+      background: #946C54;
+      float: left; }
+    body .container #maak_announcement_block .maak_announcement_text {
+      height: 100vh;
+      width: 60%;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      float: right;
+      padding: 40px 80px 40px 40px; }
+      body .container #maak_announcement_block .maak_announcement_text h1 {
+        margin: 0 0 20px 0;
+        padding: 0; }
+      body .container #maak_announcement_block .maak_announcement_text p {
+        margin: 0;
+        padding: 0; }
+    body .container footer {
+      flex-shrink: 0; }
     body .container #footer_block {
       height: 200px;
       flex-shrink: 0; }
@@ -2819,3 +2894,6 @@ body {
         display: inline-block;
         float: right;
         border-top: 1.5px dashed #98838A; }
+        body .container #footer_block .footer_block_right .footer-img {
+          width: 100%;
+          height: auto; }

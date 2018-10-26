@@ -47,10 +47,10 @@
 						<div class="container">
 
 							<!-- nav -->
-							<nav class="nav" role="navigation">
+							<nav class="nav home_nav" role="navigation">
 							  <div class=" cf" id="nav_block">
 							    <div class="nav_block_left cf">
-										<a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img"></a>
+										<a href="<?php echo get_home_url(); ?>" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img"></a>
 							       <!-- <ul class="nav_block_left_list">
 							        <li>COLLECTIE</li>
 							        <li>PORTFOLIO</li>
@@ -58,8 +58,8 @@
 							       </ul> -->
 										 <?php html5blank_nav(); ?>
 							    </div>
-							    <div class="nav_block_right">
-							      <div class="nav_block_right_content">
+							    <div class="nav_block_right cf">
+							      <div class="nav_block_right_options">
 							        <span>over</span><span>nl</span><span>/</span><span>en</span>
 							      </div>
 							    </div>

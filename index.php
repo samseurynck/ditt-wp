@@ -5,7 +5,7 @@
 		 <div class="block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 		 <div class="collection_block_content cf">
 			 <div class="collection_block_content_item">
-				 <!-- <img  src="http://localhost:8082/wordpress/wp-content/uploads/2018/10/20160519_160134-e1539192968348.jpg"> -->
+				 <img  src="http://localhost:8082/wordpress/wp-content/uploads/2018/10/20160519_160134-e1539192968348.jpg">
 			 </div>
 			 <div class="collection_block_content_item"></div>
 			 <div class="collection_block_content_item"></div>

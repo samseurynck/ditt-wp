@@ -25,6 +25,7 @@ $right-proportion: 60%;
 $twenty-percent: 20%;
 $width: width;
 $border: 1.5px dashed;
+$nav-height: 100px;
 
 // SITE COLORS
 $black: #020302;
@@ -46,7 +47,7 @@ ul {
 
 	// START HERE
 	html, body {
-	  height:100vh;
+	  height:100%;
 	}
 
 	body {
@@ -79,10 +80,12 @@ ul {
 	      }
 	    }
 
-			//////// NAVIGATION
+			//////// NAVIGATION ////////
 
+		// global styling for all navs
+		.nav{
 	    #nav_block {
-				height:100px;
+				height:$nav-height;
 				flex-shrink: 0;
 	      .nav_block_left {
 	        position: relative;
@@ -90,13 +93,10 @@ ul {
 	        width: $left-proportion;
 					padding:$spacing;
 	        display: inline-block;
-					border-right: $border $dpurple;
 	        img{
 	          height:100%;
 	        }
 	        #nav_block_left_list{
-	          font-size: .75em;
-	           text-align:right;
 	           float:right;
 	        }
 	      }
@@ -107,16 +107,108 @@ ul {
 					padding:$spacing;
 	        display: inline-block;
 	        float: right;
-	        .nav_block_right_content{
+					.nav_block_right_submenu{
+						text-align: left;
+						display:block;
+						float:left;
+					}
+	        .nav_block_right_options{
 	          font-size: .75em;
 	           text-align:right;
 	           float:right;
+
 	           span{
 	             margin-right: 5px;
 	           }
 	        }
 	      }
 	    }
+		}
+
+		// styling for Home pg nav
+		.home_nav {
+			background: white;
+			.nav_block_left {
+				border-right: $border $dpurple;
+				img{
+				}
+				#nav_block_left_list{
+				}
+			}
+			.nav_block_right {
+				.nav_block_right_submenu{
+
+				}
+				.nav_block_right_options{
+					 span{
+					 }
+				}
+			}
+		}
+
+			// styling for Portfolio pg nav
+			.blue_nav {
+				background: $dblue !important;
+				.nav_block_left {
+					border-right: $border white;
+					img{
+					}
+					#nav_block_left_list{
+					}
+				}
+				.nav_block_right {
+					.nav_block_right_submenu{
+
+					}
+					.nav_block_right_options{
+						 span{
+						 }
+					}
+				}
+			}
+
+			// styling for Maak pg nav
+			.brown_nav {
+				background: $dbrown !important;
+				.nav_block_left {
+					border-right: $border white;
+					img{
+					}
+					#nav_block_left_list{
+					}
+				}
+				.nav_block_right {
+					.nav_block_right_submenu{
+
+					}
+					.nav_block_right_options{
+						 span{
+						 }
+					}
+				}
+			}
+
+			// styling for Collectie pg nav
+			.purple_nav {
+				background: $dpurple !important;
+				.nav_block_left {
+					border-right: $border white;
+					img{
+					}
+					#nav_block_left_list{
+					}
+				}
+				.nav_block_right {
+					.nav_block_right_submenu{
+
+					}
+					.nav_block_right_options{
+						 span{
+						 }
+					}
+				}
+			}
+
 
 			//////// HOMEPAGE ////////
 
@@ -217,25 +309,35 @@ ul {
 
 			//////// PORTFOLIO ////////
 
-			#tassen_block {
-				#tassen_block_title {
-					width: $left-proportion;
-					border-top: $border $dpurple;
+			#portfolio_gallery_block {
+				.block_title {
+					width: 100%;
 					display: inline-block;
-					height:200px;
+					height:75px;
+					text-align:left;
 					}
-					.tassen_block_hero{
-						width: $right-proportion;
-						height:200px;
-						display: inline-block;
-						float:right;
-						background:tomato;
-					}
-					.tassen_block_gallery{
+					.gallery_block_gallery{
 						position:relative;
 						width:100%;
-						height:100px;
-						background: purple;
+						height:auto;
+						 display: flex;
+						flex-flow: row wrap;
+						justify-content: flex-start;
+						align-content: stretch;
+						.gallery_block_gallery_img{
+							height:300px;
+							width:100px;
+							display:inline-block;
+							border: red solid 1px;
+						}
+						.hor{
+							flex-grow: 2;
+							width:40%;
+						}
+						.vert{
+							flex-shrink: 1;
+							width:20%;
+						}
 					}
 				}
 
@@ -306,7 +408,40 @@ ul {
 				}
 			}
 
+			//////// MAAK ////////
+
+			#maak_announcement_block {
+				.maak_announcement_img {
+					height: 100vh;
+					width: $left-proportion;
+					display: inline-block;
+					background: $dbrown;
+					float: left;
+				}
+				.maak_announcement_text {
+					height: 100vh;
+					width: $right-proportion;
+					display: inline-flex;
+					flex-direction:column;
+					justify-content: center;
+					float: right;
+					padding: $spacing*2 $spacing*4 $spacing*2 $spacing*2;
+					h1{
+						margin:0 0 $spacing 0;
+						padding:0;
+					}
+					p{
+						margin:0;
+						padding:0;
+					}
+				}
+			}
+
 			//////// FOOTER ////////
+
+			footer{
+				flex-shrink: 0;
+			}
 
 	    #footer_block{
 				height:200px;
@@ -329,6 +464,10 @@ ul {
 	        display: inline-block;
 	        float: right;
 					border-top: $border $dpurple;
+					.footer-img{
+						width:100%;
+						height:auto;
+					}
 	      }
 	    }
 	  }

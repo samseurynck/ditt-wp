@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php // get_header(); ?>
+
+<?php /* */ if(is_page(2)) { get_header('collectie'); } else { get_header(); } wp_head(); ?>
+
 
 	<main role="main" class="site-content">
 		<div class="block cf" id="item_block">

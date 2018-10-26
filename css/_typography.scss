@@ -100,13 +100,36 @@ a{
 
 //////// NAVIGATION
 
-#nav_block{
+.home_nav{
+  #logo{
+    opacity:1;
+  }
 	#{$a-tags} {
-	  color: $lpurple;
+    color: $dpurple;
+    opacity: 0.6;
 	}
 	#{$a-tags-hover} {
-	  color: $dpurple;
+    opacity: 1;
 	}
+}
+
+.blue_nav, .brown_nav, .purple_nav{
+  #logo{
+    opacity:1;
+  }
+	#{$a-tags} {
+    color: white;
+    opacity: 0.6;
+	}
+	#{$a-tags-hover} {
+    opacity: 1;
+	}
+}
+
+
+#nav_block_left_list, .nav_block_right_submenu{
+  font-size: .75em;
+   text-align:right;
 }
 
 //////// HOMEPAGE
@@ -171,4 +194,29 @@ main{
 		margin:0;
 		line-height: 1.5em;
 	}
+}
+
+//////// PORTFOLIO
+
+#portfolio_gallery_block{
+  .block_title{
+    color: $dblue;
+    padding: $spacing 0 $spacing $spacing;
+  }
+}
+
+//////// MAAK
+
+#maak_announcement_block {
+  color:$dbrown;
+  .maak_announcement_text {
+    h1{
+      font-family: 'ReaderBold';
+      font-size: 3em;
+      color:$dbrown;
+    }
+    p{
+      font-size: 1.25em;
+    }
+  }
 }
