@@ -21,17 +21,14 @@ var ditt = {
 
     // ditt.display();
 
-    $('.collection_block_content_item').each(function() {
+    $('.collection_block_content_item, .footer_block_right').each(function() {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
     })
 
-    // $(".item_block_right_viewoptions").click(function(){
-    //   $(".item_block_right_details").toggle("slow");
-    //   $( ".item_block_right" ).toggleClass( "selected" );
-    // });
 
+    // show/hide options for collection page
     $('.item_block_right_viewoptions').click(function() {
       $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );

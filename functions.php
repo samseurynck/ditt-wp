@@ -14,15 +14,17 @@
 
     $url = get_stylesheet_directory_uri() . '/js/';
 
-    // wp_deregister_script('jquery');
-    // wp_register_script('jquery', ($url.'jquery.min.js'), true, '2.0.0', true );
-    // wp_register_script('jquery-ui', ($url.'jquery-ui.min.js'), true, '', true );
-    //
-    // wp_enqueue_script('jquery');
-    // wp_enqueue_script('jquery-ui');
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', ($url.'jquery.min.js'), true, '2.0.0', true );
+    wp_register_script('jquery-ui', ($url.'jquery-ui.min.js'), true, '', true );
 
-    wp_enqueue_script( 'plugins', "{$url}plugins.min.js", array('jquery'), null, true );
-    wp_enqueue_script( 'app', "{$url}app.min.js", array('jquery'), null, true );
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui');
+
+    // wp_enqueue_script( 'plugins', "{$url}plugins.min.js", array('jquery'), null, true );
+    // wp_enqueue_script( 'app', "{$url}app.min.js", array('jquery'), null, true );
+    wp_enqueue_script( 'plugins', "{$url}/x/plugins.js", array('jquery'), null, true );
+    wp_enqueue_script( 'app', "{$url}/x/app.js", array('jquery'), null, true );
   }
 
   $ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
