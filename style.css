@@ -2786,7 +2786,7 @@ body {
       body .container #portfolio_gallery_block .block_title {
         width: 100%;
         display: inline-block;
-        height: 75px;
+        height: auto;
         text-align: left; }
       body .container #portfolio_gallery_block .gallery_block_gallery {
         position: relative;
@@ -2797,16 +2797,21 @@ body {
         justify-content: flex-start;
         align-content: stretch; }
         body .container #portfolio_gallery_block .gallery_block_gallery .gallery_block_gallery_img {
-          height: 300px;
+          height: 33vw;
           width: 100px;
-          display: inline-block;
-          border: red solid 1px; }
+          display: inline-block; }
         body .container #portfolio_gallery_block .gallery_block_gallery .hor {
-          flex-grow: 2;
           width: 40%; }
+          @media screen and (max-width: 600px) {
+            body .container #portfolio_gallery_block .gallery_block_gallery .hor {
+              width: 100%;
+              height: 70vw; } }
         body .container #portfolio_gallery_block .gallery_block_gallery .vert {
-          flex-shrink: 1;
           width: 20%; }
+          @media screen and (max-width: 600px) {
+            body .container #portfolio_gallery_block .gallery_block_gallery .vert {
+              width: 50%;
+              height: 80vw; } }
     body .container #item_block {
       height: auto; }
       body .container #item_block .item_block_left {
@@ -2859,7 +2864,6 @@ body {
       height: 100vh;
       width: 40%;
       display: inline-block;
-      background: #946C54;
       float: left; }
     body .container #maak_announcement_block .maak_announcement_text {
       height: 100vh;

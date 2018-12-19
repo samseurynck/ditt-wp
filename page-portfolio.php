@@ -15,8 +15,15 @@
 
 						 if( $images ):foreach( $images as $image ):
 							 $full_image_url= $image['url'];
+							 // grabs image height and width and applies hor or vert accordingly
+							 list($width, $height) = getimagesize($full_image_url);
+									if ($width > $height) {
+									    echo '<div class="gallery_block_gallery_img hor" data-image-src="'.$full_image_url.'"></div>';
+									} else {
+									    echo '<div class="gallery_block_gallery_img vert" data-image-src="'.$full_image_url.'"></div>';
+									}
 
-							 echo '<div class="gallery_block_gallery_img" data-image-src="'.$full_image_url.'"></div>';
+
 
 							 endforeach;
 							 endif;

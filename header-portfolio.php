@@ -53,9 +53,18 @@
 							    </div>
 							    <div class="nav_block_right cf">
 										<ul class="nav_block_right_submenu">
-											<li><a href="">tassen</a></li>
-											<li><a href="">accessories</a></li>
-											<li><a href="">banner tassen</a></li>
+
+											<?php
+											if( have_rows('portfolio_section') ): while ( have_rows('portfolio_section') ) : the_row();
+
+												$title = get_sub_field('section_title');
+
+													echo '<li><a href="#'.$title.'">'.$title.'</a></li>';
+
+												endwhile;
+											 endif;
+											?>
+
 										</ul>
 							      <div class="nav_block_right_options">
 							        <span><a href="">over</a></span><span>nl</span><span>/</span><span>en</span>

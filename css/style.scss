@@ -314,30 +314,46 @@ ul {
 				.block_title {
 					width: 100%;
 					display: inline-block;
-					height:75px;
+					// height:75px;
+					height:auto;
 					text-align:left;
 					}
 					.gallery_block_gallery{
 						position:relative;
 						width:100%;
 						height:auto;
-						 display: flex;
+						display: flex;
 						flex-flow: row wrap;
 						justify-content: flex-start;
 						align-content: stretch;
 						.gallery_block_gallery_img{
-							height:300px;
+							// height:500px;
+							height: 33vw;
 							width:100px;
 							display:inline-block;
-							border: red solid 1px;
+							@media screen and (max-width: $break-small) {}
+							@media screen and (max-width: $break-small-med) {}
+							@media screen and (max-width: $break-medium) {}
+							@media screen and (max-width: $break-med-large) {}
+							@media screen and (max-width: $break-large) {}
 						}
 						.hor{
-							flex-grow: 2;
+							// flex-grow: 2;
 							width:40%;
+							@media screen and (max-width: $break-small) {width:100%; height: 70vw;}
+							@media screen and (max-width: $break-small-med) {}
+							@media screen and (max-width: $break-medium) {}
+							@media screen and (max-width: $break-med-large) {}
+							@media screen and (max-width: $break-large) {}
 						}
 						.vert{
-							flex-shrink: 1;
+							// flex-shrink: 1;
 							width:20%;
+							@media screen and (max-width: $break-small) {width:50%; height: 80vw;}
+							@media screen and (max-width: $break-small-med) {}
+							@media screen and (max-width: $break-medium) {}
+							@media screen and (max-width: $break-med-large) {}
+							@media screen and (max-width: $break-large) {}
 						}
 					}
 				}
@@ -416,7 +432,7 @@ ul {
 					height: 100vh;
 					width: $left-proportion;
 					display: inline-block;
-					background: $dbrown;
+					// background: $dbrown;
 					float: left;
 				}
 				.maak_announcement_text {

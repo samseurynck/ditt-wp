@@ -5,7 +5,16 @@
 
       <main role="main" class="site-content">
         <div class="block cf" id="maak_announcement_block">
-          <div class="maak_announcement_img"></div>
+          <!-- <div class="maak_announcement_img"></div> -->
+
+          <?php
+            $heroImage = get_field('hero_image');
+
+              if( $heroImage ):
+                echo '<div class="maak_announcement_img" data-img-src="'.$heroImage.'"></div>';
+              endif;
+            ?>
+
           <div class="maak_announcement_text">
             <h1>
               MAAK DITT
@@ -14,6 +23,7 @@
               Houd je van leer, leren tassen en wil je zelf je tas maken? Neem alvast contact op, dit wordt namelijk binnenkort mogelijk!
             </p>
           </div>
+        </div>
       </main>
 
 <?php get_footer(); ?>

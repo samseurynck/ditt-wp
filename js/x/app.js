@@ -6,8 +6,13 @@ $(document).ready(function() {
 
 // Just in case the #main content hasn't been fully loaded
 $(window).load(function() {
+  console.log('ditt.display window load')
+
+
+
+
   ditt.display();
-  console.log('ditt.display')
+
 });
 
 $(window).resize(function() {
@@ -22,7 +27,8 @@ var ditt = {
 
     // ditt.display();
 
-    $('.collection_block_content_item, .footer_block_right, .gallery_block_gallery_img').each(function() {
+    $('.collection_block_content_item, .footer_block_right, .gallery_block_gallery_img, .maak_announcement_img').each(function() {
+      console.log("backstretchin'")
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
@@ -36,16 +42,8 @@ var ditt = {
       $(this).toggleClass('item_block_right_viewoptions_selected');
     });
 
-    // adding classes to determine image orientation
-    $(".gallery_block_gallery_img").each(function(){
-    var $img = $(this).closest('img')
-    var $this = $(this)
-    if ($this.width() > $this.height()) {
-        $this.addClass("hor");
-    }else{
-        $this.addClass("vert");
-    }
-    });
+
+
 
   },
 
@@ -63,6 +61,8 @@ var ditt = {
   display: function() {
 
     console.log('Displaying...');
+
+
 
 
 }
