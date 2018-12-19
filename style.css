@@ -2781,30 +2781,32 @@ body {
       body .container #maak_block .maak_block_content p {
         align-self: center;
         text-align: center; }
-    body .container #portfolio_gallery_block .block_title {
-      width: 100%;
-      display: inline-block;
-      height: 75px;
-      text-align: left; }
-    body .container #portfolio_gallery_block .gallery_block_gallery {
-      position: relative;
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      align-content: stretch; }
-      body .container #portfolio_gallery_block .gallery_block_gallery .gallery_block_gallery_img {
-        height: 300px;
-        width: 100px;
+    body .container #portfolio_gallery_block {
+      height: auto; }
+      body .container #portfolio_gallery_block .block_title {
+        width: 100%;
         display: inline-block;
-        border: red solid 1px; }
-      body .container #portfolio_gallery_block .gallery_block_gallery .hor {
-        flex-grow: 2;
-        width: 40%; }
-      body .container #portfolio_gallery_block .gallery_block_gallery .vert {
-        flex-shrink: 1;
-        width: 20%; }
+        height: 75px;
+        text-align: left; }
+      body .container #portfolio_gallery_block .gallery_block_gallery {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: stretch; }
+        body .container #portfolio_gallery_block .gallery_block_gallery .gallery_block_gallery_img {
+          height: 300px;
+          width: 100px;
+          display: inline-block;
+          border: red solid 1px; }
+        body .container #portfolio_gallery_block .gallery_block_gallery .hor {
+          flex-grow: 2;
+          width: 40%; }
+        body .container #portfolio_gallery_block .gallery_block_gallery .vert {
+          flex-shrink: 1;
+          width: 20%; }
     body .container #item_block {
       height: auto; }
       body .container #item_block .item_block_left {

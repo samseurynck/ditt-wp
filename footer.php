@@ -10,7 +10,6 @@
 					 </ul>
 				 </div>
 				 <div class="footer_block_right" data-image-src="<?php echo get_template_directory_uri();?>/assets/dittbags-footer-purple.png">
-					 <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-footer-purple.png" alt="Ditte's workspace" class="footer-img"> -->
 				 </div>
 			 </div>
 			 </div>
@@ -23,10 +22,8 @@
 				<!-- /copyright -->
 
 			</footer>
-			<!-- /footer -->
 
 		</div>
-		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
 

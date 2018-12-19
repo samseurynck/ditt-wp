@@ -18,8 +18,7 @@
 					 foreach( $collectieImages as $collectieImages ):
 						 $full_image_url= $collectieImages['url'];
 
-					 $html =
-										 '<div class="collection_block_content_item" data-image-src="'.$full_image_url.'"></div>';
+					 $html = '<div class="collection_block_content_item" data-image-src="'.$full_image_url.'"></div>';
 
 					 echo $html;
 

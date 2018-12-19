@@ -310,6 +310,7 @@ ul {
 			//////// PORTFOLIO ////////
 
 			#portfolio_gallery_block {
+				height:auto;
 				.block_title {
 					width: 100%;
 					display: inline-block;
@@ -470,5 +471,24 @@ ul {
 					}
 	      }
 	    }
+
+			// MAAK FOOTER
+			// .page-id-9 {
+			// 	#footer_block{
+		  //    .page-id-9 .footer_block_left {
+			// 			border-right: $border $dbrown;
+		  //     }
+		  //     .footer_block_right {
+			// 			border-top: $border $dbrown !important;
+			// 			.footer-img{
+			// 				width:100%;
+			// 				height:auto;
+			// 			}
+		  //     }
+		  //   }
+			// }
+
 	  }
 	}
+
+//////// ACF ////////

@@ -355,6 +355,7 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
