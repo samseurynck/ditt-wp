@@ -3,13 +3,9 @@ $(document).ready(function() {
   console.log('ditt.init')
 });
 
-
 // Just in case the #main content hasn't been fully loaded
 $(window).load(function() {
   console.log('ditt.display window load')
-
-
-
 
   ditt.display();
 
@@ -27,13 +23,12 @@ var ditt = {
 
     // ditt.display();
 
-    $('.collection_block_content_item, .footer_block_right, .gallery_block_gallery_img, .maak_announcement_img').each(function() {
-      console.log("backstretchin'")
+    $('.bstretchMe, .item_block_left, .gallery_block_gallery_img').each(function() {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
+      console.log("backstretchin'")
     })
-
 
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
@@ -42,13 +37,7 @@ var ditt = {
       $(this).toggleClass('item_block_right_viewoptions_selected');
     });
 
-
-
-
   },
-
-
-
 
   resize: function() {
 
@@ -62,10 +51,7 @@ var ditt = {
 
     console.log('Displaying...');
 
-
-
-
-}
+  }
 
 
 };

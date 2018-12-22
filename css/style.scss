@@ -314,7 +314,6 @@ ul {
 				.block_title {
 					width: 100%;
 					display: inline-block;
-					// height:75px;
 					height:auto;
 					text-align:left;
 					}
@@ -359,6 +358,16 @@ ul {
 				}
 
 			//////// COLLECTIE ////////
+
+			.block_title {
+				width: 100%;
+				display: inline-block;
+				// height:75px;
+				height:auto;
+				text-align:left;
+				color: $dpurple;
+				padding: $spacing 0 $spacing $spacing;
+				}
 
 			#item_block {
 				height:auto;
@@ -405,7 +414,7 @@ ul {
 						}
 					}
 					.item_block_right_details{
-						display:none;
+						// display:none;
 						.item_block_right_details_specs{
 							width: 60%;
 							float:left;
@@ -415,6 +424,13 @@ ul {
 							width: 40%;
 							float:right;
 							padding: 0 0 $spacing $spacing;
+							#item_block_right_details_kleuren_swatches{
+								position: relative;
+								display:inline-block;
+								height:20px;
+								width:20px;
+								float:left;
+							}
 						}
 						.item_block_right_details_ordering{
 							width: 60%;

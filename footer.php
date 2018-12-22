@@ -9,7 +9,7 @@
 						 <li>lorem ipsum</li>
 					 </ul>
 				 </div>
-				 <div class="footer_block_right" data-image-src="<?php echo get_template_directory_uri();?>/assets/dittbags-footer-purple.png">
+				 <div class="footer_block_right bstretchMe" data-image-src="<?php echo get_template_directory_uri();?>/assets/dittbags-footer-purple.png">
 				 </div>
 			 </div>
 			 </div>

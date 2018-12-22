@@ -2812,6 +2812,13 @@ body {
             body .container #portfolio_gallery_block .gallery_block_gallery .vert {
               width: 50%;
               height: 80vw; } }
+    body .container .block_title {
+      width: 100%;
+      display: inline-block;
+      height: auto;
+      text-align: left;
+      color: #98838A;
+      padding: 20px 0 20px 20px; }
     body .container #item_block {
       height: auto; }
       body .container #item_block .item_block_left {
@@ -2846,20 +2853,24 @@ body {
             align-self: flex-end;
             text-align: right;
             cursor: pointer; }
-        body .container #item_block .item_block_right .item_block_right_details {
-          display: none; }
-          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {
-            width: 60%;
-            float: left;
-            padding-bottom: 20px; }
-          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren {
-            width: 40%;
-            float: right;
-            padding: 0 0 20px 20px; }
-          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_ordering {
-            width: 60%;
-            float: left;
-            padding-bottom: 20px; }
+        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {
+          width: 60%;
+          float: left;
+          padding-bottom: 20px; }
+        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren {
+          width: 40%;
+          float: right;
+          padding: 0 0 20px 20px; }
+          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren #item_block_right_details_kleuren_swatches {
+            position: relative;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            float: left; }
+        body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_ordering {
+          width: 60%;
+          float: left;
+          padding-bottom: 20px; }
     body .container #maak_announcement_block .maak_announcement_img {
       height: 100vh;
       width: 40%;

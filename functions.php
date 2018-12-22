@@ -21,6 +21,7 @@
     wp_enqueue_script('jquery');
     wp_enqueue_script('jquery-ui');
 
+    // THESE SHOULD BE SWAPPED AT SOME POINT!!
     // wp_enqueue_script( 'plugins', "{$url}plugins.min.js", array('jquery'), null, true );
     // wp_enqueue_script( 'app', "{$url}app.min.js", array('jquery'), null, true );
     wp_enqueue_script( 'plugins', "{$url}/x/plugins.js", array('jquery'), null, true );
