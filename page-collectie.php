@@ -109,25 +109,23 @@
 													'</div>'.
 												'</div>';
 
-
 						endwhile;
 						endif;
 
 						echo '</div>'. //KEEP
-						'</div>'; //KEEP
+								 '</div>'; //KEEP
 
 
 				endwhile;
 				endif;
 
-				echo '</div>';
-				// '</div>';
+				echo '</div>'; //KEEP
 
 		endwhile;
 		endif;
 
 			echo '</div>'.
-			'</div>';
+					 '</div>';
 
 	?>
 
