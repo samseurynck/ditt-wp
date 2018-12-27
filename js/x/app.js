@@ -32,6 +32,7 @@ var ditt = {
 
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
+      console.log("opties click")
       $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
       $(this).toggleClass('item_block_right_viewoptions_selected');

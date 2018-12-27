@@ -42,92 +42,90 @@
 	    </div>
 		</div> -->
 
-		<?php
+		<?php if (have_rows('pSect')): ?>
+		    <?php while (have_rows('pSect')) : ?>
+		        <?php the_row(); ?>
+		        <?php $productSectionTitle = get_sub_field('pSecTitle'); ?>
+		        <div class="block_title cf" id="collectie_block_title"><?php echo $productSectionTitle; ?></div>
 
-		if( have_rows('pSect') ): while ( have_rows('pSect') ) : the_row();
-			$productSectionTitle = get_sub_field('pSecTitle');
-			echo '<div class="block_title cf" id="collectie_block_title">'.$productSectionTitle.'</div>';
+		        <?php if (have_rows('prods')) : ?>
+		            <?php while (have_rows('prods')): ?>
+		                <?php the_row(); ?>
+		                <?php $products = get_sub_field('prods'); ?>
+		                <div class="block cf" id="item_block">
+		                    <?php if (have_rows('indivProd')): ?>
+		                        <?php while (have_rows('indivProd')): ?>
+		                            <?php the_row(); ?>
+		                            <?php
+		                                $individualProduct = get_sub_field('indivProd');
+		                                $images            = get_sub_field('images');
+		                            ?>
 
-				if( have_rows('prods') ): while ( have_rows('prods') ) : the_row();
-					$products = get_sub_field('prods');
-					echo  '<div class="block cf" id="item_block">';
+		                            <?php if ($images): ?>
+		                                <?php foreach ($images as $image): ?>
+		                                    <?php $full_image_url = $image['url']; ?>
+		                                        <div class="item_block_left bstretchMe cf" data-img-src="<?php echo $full_image_url; ?>"></div>
+		                                <?php endforeach; ?>
+		                            <?php endif; ?>
 
-						if( have_rows('indivProd') ): while ( have_rows('indivProd') ) : the_row();
-							$individualProduct = get_sub_field('indivProd');
-							$images = get_sub_field('images');
-
-								if( $images ):foreach( $images as $image ):
-									$full_image_url= $image['url'];
-									echo '<div class="item_block_left bstretchMe cf" data-img-src="'.$full_image_url.'"></div>';
-
-								endforeach;
-								endif;
-
-								$productName = get_sub_field('product_name');
-								$productType = get_sub_field('product_type');
-
-
-								echo '<div class="item_block_right cf">'.
-									      '<div class="item_block_right_header cf">'.
-									        '<ul class="item_block_right_header_list">'.
-									          '<li id="product_title">'.$productName.'</li>'.
-									          '<li id="product_subtitle">'.$productType.'</li>'.
-									        '</ul>'.
-													'<div class="item_block_right_viewoptions">bestellen opties</div>'.
-									      '</div>'.
-												'<div class="item_block_right_details cf">'.
-													'<div class="item_block_right_details_specs">'.
-										       '<h5 class="item_block_right_details_specstitle">Lorem Ipsum</h5>'.
-										        '<ul class="item_block_right_details_specslist">';
-
-									if( have_rows('detailList') ): while ( have_rows('detailList') ) : the_row();
-										$bijzonderheden = get_sub_field('bijzonderheden');
-										$message = "working!?";
-										echo '<li>'.$bijzonderheden.'</li>';
-
-									endwhile;
-									endif;
-
-									echo  '</ul>'.
-												'</div>'.
-													'<div class="item_block_right_details_kleuren cf">'.
-														'<p id="item_block_right_details_kleuren_title">Kleuren</p>';
-
-									if( have_rows('colOps') ): while ( have_rows('colOps') ) : the_row();
-										$colorPick = get_sub_field('cPick');
-										echo	'<div id="item_block_right_details_kleuren_swatches" style="background-color:'.$colorPick.';"></div>';
-
-									endwhile;
-									endif;
-
-									echo '</div>'.
-													'<div class="item_block_right_details_ordering">'.
-														'<h5 class="item_block_right_details_orderingtitle">Lorem Ipsum</h5>'.
-														'<p class="item_block_right_details_orderingp">'.
-															'All products created through DITT Bags are custom made. Details such as color, size and detailing will be discussed upon the beginning of a new project. To order a bag and begin a new project, send an inquiry to  inquiries@dittbags.com'.
-														'</p>'.
-													'</div>'.
-												'</div>';
-
-						endwhile;
-						endif;
-
-						echo '</div>'. //KEEP
-								 '</div>'; //KEEP
+		                            <?php
+		                                $productName = get_sub_field('product_name');
+		                                $productType = get_sub_field('product_type');
+		                            ?>
 
 
-				endwhile;
-				endif;
+		                            <div class="item_block_right cf">
+		                                <div class="item_block_right_header cf">
+		                                    <ul class="item_block_right_header_list">
+		                                        <li id="product_title"><?php echo $productName; ?></li>
+		                                        <li id="product_subtitle"><?php $productType; ?></li>
+		                                    </ul>
+		                                	<div class="item_block_right_viewoptions">bestellen opties</div>
+																		</div>
 
-				echo '</div>'; //KEEP
+			                            <div class="item_block_right_details cf">
+			                                <div class="item_block_right_details_specs">
+			                                    <h5 class="item_block_right_details_specstitle">Lorem Ipsum</h5>
+			                                        <ul class="item_block_right_details_specslist">
 
-		endwhile;
-		endif;
+			                                            <?php if (have_rows('detailList')): ?>
+			                                                <?php while (have_rows('detailList')): ?>
+			                                                    <?php the_row(); ?>
+			                                                        <?php
+			                                                            $bijzonderheden = get_sub_field('bijzonderheden');
+			                                                        ?>
+			                                                        <li><?php echo $bijzonderheden; ?></li>
+			                                                <?php endwhile; ?>
+			                                            <?php endif; ?>
 
-			echo '</div>'.
-					 '</div>';
+			                                        </ul>
+			                                    </div>
+			                                <div class="item_block_right_details_kleuren cf">
+			                                    <p id="item_block_right_details_kleuren_title">Kleuren</p>
 
-	?>
+			                                    <?php if (have_rows('colOps')): ?>
+			                                        <?php while (have_rows('colOps')): ?>
+			                                            <?php the_row(); ?>
+			                                            <?php $colorPick = get_sub_field('cPick'); ?>
+			                                            <div id="item_block_right_details_kleuren_swatches" style="background-color:<?php echo $colorPick; ?>"></div>
+			                                        <?php endwhile; ?>
+			                                    <?php endif; ?>
+			                                </div>
+				                                <div class="item_block_right_details_ordering">
+				                                    <h5 class="item_block_right_details_orderingtitle">Lorem Ipsum</h5>
+				                                    <p class="item_block_right_details_orderingp">
+				                                        All products created through DITT Bags are custom made. Details such as color, size and detailing will be discussed upon the beginning of a new project. To order a bag and begin a new project, send an inquiry to  inquiries@dittbags.com
+				                                    </p>
+				                                </div>
+																			</div>
+			                            </div>
+		                        <?php endwhile; ?>
+		                    <?php endif; ?>
+		                </div>
+		            <?php endwhile; ?>
+		        <?php endif; ?>
+		    <?php endwhile; ?>
+		<?php endif; ?>
 
 <!-- </div>
 </div> -->
