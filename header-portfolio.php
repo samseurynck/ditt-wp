@@ -58,8 +58,10 @@
 											if( have_rows('portfolio_section') ): while ( have_rows('portfolio_section') ) : the_row();
 
 												$title = get_sub_field('section_title');
+												// this takes the title of the section and converts it to lowercase, no spaces, to become an ID
+												$titleId = preg_replace('/\W+/','',strtolower(strip_tags($title)));
 
-													echo '<li><a href="#'.$title.'">'.$title.'</a></li>';
+													echo '<li><a href="#'.$titleId.'">'.$title.'</a></li>';
 
 												endwhile;
 											 endif;
