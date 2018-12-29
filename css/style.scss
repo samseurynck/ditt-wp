@@ -48,6 +48,7 @@ ul {
 	// START HERE
 	html, body {
 	  height:100%;
+		cursor: default;
 	}
 
 	body {
@@ -73,7 +74,7 @@ ul {
 	      width: 100%;
 	      height: 400px;
 	      background: white;
-	      .block_title {
+	      .homepage_block_title {
 	        position: relative;
 	        height: 100%;
 	        text-align: center;
@@ -83,6 +84,14 @@ ul {
 			//////// NAVIGATION ////////
 
 		// global styling for all navs
+		.nav_span{
+			display:inline-block;
+			width:100%;
+			height:auto;
+			padding:0;
+			margin:0;
+		}
+
 		.nav{
 	    #nav_block {
 				height:$nav-height;

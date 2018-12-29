@@ -7,11 +7,15 @@
 				 if( have_rows('portfolio_section') ): while ( have_rows('portfolio_section') ) : the_row();
 
 					 $portfolioSection = get_sub_field('section_title');
+					 // this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
+					 $sectionId = preg_replace('/\W+/','',strtolower(strip_tags($portfolioSection)));
 					 $images = get_sub_field('prod_gallery');
 
 					 echo '<div class="block cf" id="portfolio_gallery_block">'.
-					 				'<div class="block_title cf" id="gallery_block_title">'.$portfolioSection.'</div>'.
-									'<div class="gallery_block_gallery" id="'.$portfolioSection.'">';
+					 				'<span class="nav_span" id="'.$sectionId.'">'.
+					 					'<div class="block_title cf" id="gallery_block_title">'.$portfolioSection.'</div>'.
+									'</span>'.
+									'<div class="gallery_block_gallery" id="">';
 
 						 if( $images ):foreach( $images as $image ):
 							 $full_image_url= $image['url'];

@@ -39,9 +39,9 @@
 							    </div>
 							    <div class="nav_block_right cf">
 										<ul class="nav_block_right_submenu">
-											<li><a href="">tassen</a></li>
+											<!-- <li><a href="">tassen</a></li>
 											<li><a href="">accessories</a></li>
-											<li><a href="">banner tassen</a></li>
+											<li><a href="">banner tassen</a></li> -->
 										</ul>
 							      <div class="nav_block_right_options">
 							        <span><a href="">over</a></span><span>nl</span><span>/</span><span>en</span>

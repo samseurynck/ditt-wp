@@ -2636,7 +2636,8 @@ ul {
   list-style: none; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  cursor: default; }
 
 body {
   width: 100vw;
@@ -2660,10 +2661,16 @@ body {
       width: 100%;
       height: 400px;
       background: white; }
-      body .container .block .block_title {
+      body .container .block .homepage_block_title {
         position: relative;
         height: 100%;
         text-align: center; }
+    body .container .nav_span {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      margin: 0; }
     body .container .nav #nav_block {
       height: 100px;
       flex-shrink: 0; }

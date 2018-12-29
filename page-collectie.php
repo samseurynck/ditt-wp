@@ -45,8 +45,13 @@
 		<?php if (have_rows('pSect')): ?>
 		    <?php while (have_rows('pSect')) : ?>
 		        <?php the_row(); ?>
-		        <?php $productSectionTitle = get_sub_field('pSecTitle'); ?>
-		        <div class="block_title cf" id="collectie_block_title"><?php echo $productSectionTitle; ?></div>
+		        <?php
+							$productSectionTitle = get_sub_field('pSecTitle');
+							$sectionId = preg_replace('/\W+/','',strtolower(strip_tags($productSectionTitle)));
+							?>
+						<span class="nav_span" id="<?php echo $sectionId; ?>">
+		        	<div class="block_title cf" id="collectie_block_title"><?php echo $productSectionTitle; ?></div>
+						</span>
 
 		        <?php if (have_rows('prods')) : ?>
 		            <?php while (have_rows('prods')): ?>
@@ -56,17 +61,17 @@
 		                    <?php if (have_rows('indivProd')): ?>
 		                        <?php while (have_rows('indivProd')): ?>
 		                            <?php the_row(); ?>
-		                            <?php
+		                            <!-- <?php
 		                                $individualProduct = get_sub_field('indivProd');
 		                                $images            = get_sub_field('images');
-		                            ?>
+		                            ?> -->
 
-		                            <?php if ($images): ?>
+		                            <!-- <?php if ($images): ?>
 		                                <?php foreach ($images as $image): ?>
 		                                    <?php $full_image_url = $image['url']; ?>
 		                                        <div class="item_block_left bstretchMe cf" data-img-src="<?php echo $full_image_url; ?>"></div>
 		                                <?php endforeach; ?>
-		                            <?php endif; ?>
+		                            <?php endif; ?> -->
 
 		                            <?php
 		                                $productName = get_sub_field('product_name');

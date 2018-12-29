@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 // Just in case the #main content hasn't been fully loaded
 $(window).load(function() {
-  console.log('ditt.display window load')
+  console.log('ditt.display')
 
   ditt.display();
 
@@ -40,42 +40,20 @@ var ditt = {
     });
 
     // SCROLLING FOR HEADERS
-    // $('.nav_block_right_submenu li a').click(function() {
-    //   var $this = $(this);
-    //   var $navId = $this.attr('id');
-    //   console.log($navId);
-    //
-    //   $(window).scrollTo('$navId)', 300, {
-    //     axis:'y',
-    //     easing:'easeOutSine',
-    //     interrupt: true
-    //   });
-    // });
-
-    // SCROLLING FOR HEADERS v1
-    // $('.nav_block_right_submenu li a').on('click', function (el) {
-    //   el.preventDefault();
-    //
-    //   var $this = $(this);
-    //   var $navId = $this.attr('id');
-    //   console.log($navId);
-    //
-    //   $('html, body').animate({
-    //     scrollTop: $('#($navId)').offset().top
-    //   }, 500, 'linear');
-    // });
-
-    // SCROLLING FOR HEADERS v2
-    $('.nav_block_right_submenu li a[href*="#"]').on('click', function (e) {
+    $('.nav_block_right .nav_block_right_submenu li a[href*="#"]').on('click', function (e) {
+      console.log("clicked")
+      // only executes if the target hash has a length of non-zero (to be sure it exists)
       if ( $(e.target.hash).length ) {
+        console.log("has length")
+        // prevents the default action of <a>, which is to take the browser to a new URL
         e.preventDefault();
-        console.log($(this).attr('href'));
 
         $('html, body').animate({
         scrollTop: $($(this).attr('href')).offset().top
         }, 500, 'easeOutSine');
+        console.log("scrolling")
       };
-});
+    });
   },
 
   resize: function() {
