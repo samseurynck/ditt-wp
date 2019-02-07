@@ -495,13 +495,15 @@ figure{
 				display:flex;
 				flex-wrap:wrap;
 				border-top: $border $dpurple;
-				border-bottom: $border $dpurple;
+				// border-bottom: $border $dpurple;
 				cursor: default;
 				transition-duration: 5s;
 				.catalog_content_banner{
 					width:20%;
 					height:auto;
-					// border-bottom: $border $dpurple;
+					@media screen and (max-width: $break-small) {width:50%;}
+					@media screen and (max-width: $break-medium) {width:33.3%;}
+					@media screen and (max-width: $break-large) {}
 					.img_wrap{
 						// this exists to have a background color, providing color for monotone image
 						width: 100%;

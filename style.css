@@ -2816,13 +2816,13 @@ body {
           display: inline-block; }
         body .container #portfolio_gallery_block .gallery_block_gallery .hor {
           width: 40%; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 375px) {
             body .container #portfolio_gallery_block .gallery_block_gallery .hor {
               width: 100%;
               height: 70vw; } }
         body .container #portfolio_gallery_block .gallery_block_gallery .vert {
           width: 20%; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 375px) {
             body .container #portfolio_gallery_block .gallery_block_gallery .vert {
               width: 50%;
               height: 80vw; } }
@@ -2914,12 +2914,17 @@ body {
       display: flex;
       flex-wrap: wrap;
       border-top: 1.5px dashed #98838A;
-      border-bottom: 1.5px dashed #98838A;
       cursor: default;
       transition-duration: 5s; }
       body .container .catalog_content .catalog_content_banner {
         width: 20%;
         height: auto; }
+        @media screen and (max-width: 375px) {
+          body .container .catalog_content .catalog_content_banner {
+            width: 50%; } }
+        @media screen and (max-width: 900px) {
+          body .container .catalog_content .catalog_content_banner {
+            width: 33.3%; } }
         body .container .catalog_content .catalog_content_banner .img_wrap {
           width: 100%;
           background-color: #98838A; }
@@ -2982,7 +2987,7 @@ body {
         width: 10%;
         margin: 0 45% 0 45%;
         border-top: 1.5px dashed #98838A; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 375px) {
         body .container #over_bg_block_left {
           width: 100%;
           display: inline-block; } }
@@ -3007,7 +3012,7 @@ body {
         padding: 0 40px 0 40px;
         font-weight: 400;
         font-size: .75em; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 375px) {
         body .container #over_bg_block_right {
           width: 100%;
           display: inline-block; } }

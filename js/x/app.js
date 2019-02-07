@@ -31,6 +31,13 @@ var ditt = {
       console.log("backstretchin'")
     })
 
+    // THIS WORKS
+    // var $url = 'http://localhost:8082/wordpress/wp-content/uploads/2018/12/20160627_093012.jpg';
+    //
+    // $('.maak_announcement_img').backstretch($url, { fade: 500 });
+
+
+
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
       console.log("opties click")
@@ -57,15 +64,6 @@ var ditt = {
 
     var $bImage = '.banner_image';
     var $thatthat = '.catalog_content_banner';
-
-    // $($thisthis).on('mouseover', function(event){
-    //   $($thisthis).not($(this)).addClass('non_hover');
-    //   console.log('this')
-    // });
-    //
-    // $($thisthis).on('mouseout', function(){
-    //   $($thisthis).removeClass('non_hover');
-    // });
 
     $($thatthat).on('mouseover', function(event){
       $($thatthat).not($(this)).find($bImage).addClass('non_hover');
