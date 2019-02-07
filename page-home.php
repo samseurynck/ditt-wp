@@ -30,14 +30,41 @@
 		</div>
 		<div class="block cf" id="portfolio_block">
 		 <div class="portfolio_block_content cf">
-			 <div class="portfolio_block_content_item">
-			 </div>
+			 <!-- <div class="portfolio_block_content_item"></div>
 			 <div class="portfolio_block_content_item"></div>
-			 <div class="portfolio_block_content_item"></div>
-			 <div class="portfolio_block_content_item"></div>
-		 </div>
-		 <div class="homepage_block_title" id="portfolio_block_title"><h1>PORTFOLIO</h1></div>
+			 <div class="portfolio_block_content_item"></div> -->
+
+
+			<?php
+
+			if( have_rows('portfolio_section' , 12) ): while ( have_rows('portfolio_section' , 12) ) : the_row();
+
+				$portfolioSection = get_sub_field('section_title' , 12);
+				// this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
+				$sectionId = preg_replace('/\W+/','',strtolower(strip_tags($portfolioSection)));
+				$images = get_sub_field('prod_gallery' , 12);
+				$firstImage = $images[0];
+
+					if( $images ):foreach( $images as $image ):
+						// $full_image_url= $image['url'];
+						// grabs image height and width and applies hor or vert accordingly
+						// list($width, $height) = getimagesize($full_image_url);
+
+							echo '<a href="'.get_site_url();'./#'.$sectionId.'>
+										<div class="portfolio_block_content_item bstretchMe" data-image-src="'.$firstImage['url'].'"></div>
+										</a>';
+
+						endforeach;
+						endif;
+				endwhile;
+				// else :
+				endif;
+		?>
+
+			</div>
+			<div class="homepage_block_title" id="portfolio_block_title"><h1>PORTFOLIO</h1></div>
 		</div>
+
 		<div class="block cf" id="maak_block">
 		 <div class="homepage_block_title" id="maak_block_title"><h1>MAAK</h1></div>
 		 <div class="maak_block_content">

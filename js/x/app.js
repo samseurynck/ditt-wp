@@ -54,6 +54,30 @@ var ditt = {
         console.log("scrolling")
       };
     });
+
+    var $bImage = '.banner_image';
+    var $thatthat = '.catalog_content_banner';
+
+    // $($thisthis).on('mouseover', function(event){
+    //   $($thisthis).not($(this)).addClass('non_hover');
+    //   console.log('this')
+    // });
+    //
+    // $($thisthis).on('mouseout', function(){
+    //   $($thisthis).removeClass('non_hover');
+    // });
+
+    $($thatthat).on('mouseover', function(event){
+      $($thatthat).not($(this)).find($bImage).addClass('non_hover');
+      $($thatthat).not($(this)).find('.banner_title').css( "color", "#98838A" );
+    });
+
+    $($thatthat).on('mouseout', function(){
+      $($thatthat).not($(this)).delay(5000).find($bImage).removeClass('non_hover');
+      $($thatthat).not($(this)).delay(5000).find('.banner_title').css( "color", "black" );
+    });
+
+
   },
 
   resize: function() {

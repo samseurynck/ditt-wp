@@ -330,6 +330,9 @@ main .maak_block_content {
   #maak_announcement_block .maak_announcement_text p {
     font-size: 1.25em; }
 
+.catalog_content .catalog_content_banner .banner_title {
+  font-size: .75em; }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2635,6 +2638,10 @@ ul {
   padding: 0;
   list-style: none; }
 
+figure {
+  margin: 0;
+  padding: 0; }
+
 html, body {
   height: 100%;
   cursor: default; }
@@ -2699,7 +2706,7 @@ body {
           font-size: .75em;
           text-align: right;
           float: right; }
-          body .container .nav #nav_block .nav_block_right .nav_block_right_options span {
+          body .container .nav #nav_block .nav_block_right .nav_block_right_options span, body .container .nav #nav_block .nav_block_right .nav_block_right_options a {
             margin-right: 5px; }
     body .container .home_nav {
       background: white; }
@@ -2899,6 +2906,111 @@ body {
       body .container #maak_announcement_block .maak_announcement_text p {
         margin: 0;
         padding: 0; }
+    body .container .catalog_content {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1.5px dashed #98838A;
+      border-bottom: 1.5px dashed #98838A;
+      cursor: default;
+      transition-duration: 5s; }
+      body .container .catalog_content .catalog_content_banner {
+        width: 20%;
+        height: auto; }
+        body .container .catalog_content .catalog_content_banner .img_wrap {
+          width: 100%;
+          background-color: #98838A; }
+          body .container .catalog_content .catalog_content_banner .img_wrap .banner_image {
+            max-width: 100%;
+            display: block; }
+          body .container .catalog_content .catalog_content_banner .img_wrap .non_hover {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: .5; }
+        body .container .catalog_content .catalog_content_banner .banner_title {
+          width: 100%;
+          text-align: center;
+          padding: 20px 0 20px 0;
+          border-right: 1.5px dashed #98838A; }
+    body .container .over_block {
+      position: absolute;
+      display: flex;
+      top: 300px;
+      height: auto;
+      width: 80%;
+      z-index: 100;
+      margin-left: 20px;
+      flex-flow: row noWrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+      min-height: 200px; }
+      @media screen and (max-width: 900px) {
+        body .container .over_block {
+          height: calc(85vh - 100px); } }
+      body .container .over_block p {
+        width: 40%;
+        margin-left: 20px;
+        font-size: .75em;
+        line-height: 1.75em; }
+      body .container .over_block h2 {
+        width: 60%;
+        margin-left: 20px; }
+    body .container .over_bg_block {
+      position: relative;
+      height: calc(100vh - 100px);
+      display: inline-block;
+      background: white;
+      border-top: 1.5px dashed #98838A;
+      z-index: 1;
+      min-height: 300px; }
+    body .container #over_bg_block_left {
+      width: 40%;
+      border-right: 1.5px dashed #98838A; }
+      body .container #over_bg_block_left .bg_topContent {
+        height: 10%;
+        width: 10%;
+        margin: 0 45% 0 45%;
+        border-bottom: 1.5px dashed #98838A; }
+      body .container #over_bg_block_left .bg_bottomContent {
+        position: absolute;
+        bottom: 0;
+        height: 10%;
+        width: 10%;
+        margin: 0 45% 0 45%;
+        border-top: 1.5px dashed #98838A; }
+      @media screen and (max-width: 600px) {
+        body .container #over_bg_block_left {
+          width: 100%;
+          display: inline-block; } }
+    body .container #over_bg_block_right {
+      width: 60%;
+      float: right;
+      color: #98838A;
+      font-size: .75em;
+      font-weight: 700; }
+      body .container #over_bg_block_right .bg_topContent {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        margin-top: 10%; }
+      body .container #over_bg_block_right .bg_bottomContent {
+        position: absolute;
+        bottom: 0;
+        height: auto;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10%;
+        padding: 0 40px 0 40px;
+        font-weight: 400;
+        font-size: .75em; }
+      @media screen and (max-width: 600px) {
+        body .container #over_bg_block_right {
+          width: 100%;
+          display: inline-block; } }
     body .container footer {
       flex-shrink: 0; }
     body .container #footer_block {
