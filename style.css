@@ -2668,6 +2668,18 @@ body {
       width: 100%;
       height: 400px;
       background: white; }
+      @media screen and (max-width: 1024px) {
+        body .container .block {
+          height: 400px; } }
+      @media screen and (max-width: 900px) {
+        body .container .block {
+          height: 325px; } }
+      @media screen and (max-width: 425px) {
+        body .container .block {
+          height: 200px; } }
+      @media screen and (max-width: 375px) {
+        body .container .block {
+          height: 200px; } }
       body .container .block .homepage_block_title {
         position: relative;
         height: 100%;
@@ -2724,49 +2736,101 @@ body {
       background: #98838A !important; }
       body .container .purple_nav .nav_block_left {
         border-right: 1.5px dashed white; }
-    body .container #collection_block #collection_block_title {
-      background: #98838A;
-      width: 40%;
-      display: inline-flex;
-      justify-content: space-around; }
-      body .container #collection_block #collection_block_title h1 {
-        align-self: center; }
     body .container #collection_block .collection_block_content {
-      position: relative;
       height: 100%;
-      width: 60%;
-      display: inline-block;
-      float: right;
-      border-top: 1.5px dashed #98838A; }
-      body .container #collection_block .collection_block_content .collection_block_content_item {
+      width: 100%;
+      background-color: #98838A;
+      display: flex;
+      flex-wrap: nowrap; }
+      body .container #collection_block .collection_block_content #collection_block_title {
+        background: #98838A;
+        width: 40%;
+        display: inline-flex;
+        justify-content: space-around;
+        flex-grow: 1;
+        flex-basis: 0; }
+        body .container #collection_block .collection_block_content #collection_block_title h1 {
+          align-self: center; }
+      body .container #collection_block .collection_block_content .img_wrap {
         position: relative;
         height: 100%;
-        width: 33.3%;
-        border-right: 1px solid red;
-        display: inline-block;
-        float: left; }
+        flex-grow: 1; }
+        @media screen and (max-width: 425px) {
+          body .container #collection_block .collection_block_content .img_wrap {
+            display: none; } }
+        @media screen and (max-width: 375px) {
+          body .container #collection_block .collection_block_content .img_wrap {
+            display: none; } }
+        body .container #collection_block .collection_block_content .img_wrap .collection_block_content_item {
+          height: 100%;
+          width: 100%;
+          background-blend-mode: screen;
+          -webkit-filter: grayscale(100%) contrast(110%);
+          filter: grayscale(100%) contrast(110%);
+          opacity: .8;
+          transition-duration: .5s; }
+          body .container #collection_block .collection_block_content .img_wrap .collection_block_content_item:hover {
+            -webkit-filter: none;
+            filter: none;
+            opacity: 1; }
     body .container #portfolio_block .portfolio_block_content {
       position: relative;
       height: 100%;
-      width: 80%;
+      width: 100%;
       display: inline-block;
-      float: left;
-      border-top: 1.5px dashed #536164; }
-      body .container #portfolio_block .portfolio_block_content .portfolio_block_content_item {
-        position: relative;
+      border-top: 1.5px dashed #536164;
+      display: flex;
+      flex-wrap: nowrap; }
+      body .container #portfolio_block .portfolio_block_content a {
+        display: block;
         height: 100%;
-        width: 25%;
-        border-right: 1px solid red;
-        display: inline-block;
-        float: left; }
-    body .container #portfolio_block #portfolio_block_title {
-      background: #536164;
-      width: 20%;
-      display: inline-flex;
-      justify-content: space-around;
-      float: right; }
-      body .container #portfolio_block #portfolio_block_title h1 {
-        align-self: center; }
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+        flex-basis: 0; }
+        @media screen and (max-width: 425px) {
+          body .container #portfolio_block .portfolio_block_content a {
+            display: none; } }
+        @media screen and (max-width: 375px) {
+          body .container #portfolio_block .portfolio_block_content a {
+            display: none; } }
+        body .container #portfolio_block .portfolio_block_content a .img_wrap {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-color: #536164; }
+          body .container #portfolio_block .portfolio_block_content a .img_wrap .portfolio_block_content_title {
+            position: absolute;
+            display: inline-flex;
+            justify-content: space-around;
+            z-index: 2;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            height: 100%; }
+          body .container #portfolio_block .portfolio_block_content a .img_wrap .portfolio_block_content_item {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-blend-mode: screen;
+            -webkit-filter: grayscale(100%) contrast(110%);
+            filter: grayscale(100%) contrast(110%);
+            opacity: .8;
+            transition-duration: .5s; }
+            body .container #portfolio_block .portfolio_block_content a .img_wrap .portfolio_block_content_item:hover {
+              -webkit-filter: none;
+              filter: none;
+              opacity: 1; }
+      body .container #portfolio_block .portfolio_block_content #portfolio_block_title {
+        background: #536164;
+        width: 20%;
+        flex-grow: 1;
+        display: inline-flex;
+        justify-content: space-around;
+        min-width: 250px;
+        flex-basis: 0; }
+        body .container #portfolio_block .portfolio_block_content #portfolio_block_title h1 {
+          align-self: center; }
     body .container #maak_block #maak_block_title {
       background: #946C54;
       width: 40%;
@@ -2784,6 +2848,12 @@ body {
       float: right;
       border-top: 1.5px dashed #946C54;
       padding: 0 80px 0 80px; }
+      @media screen and (max-width: 425px) {
+        body .container #maak_block .maak_block_content {
+          display: none; } }
+      @media screen and (max-width: 375px) {
+        body .container #maak_block .maak_block_content {
+          display: none; } }
       body .container #maak_block .maak_block_content .maak_block_content_top {
         align-self: center;
         width: 50px;
