@@ -1,68 +1,71 @@
 <?php get_header(); ?>
 
 	<main role="main" class="site-content">
-		<div class="block cf" id="collection_block">
-			<div class="collection_block_content cf">
-				<div class="homepage_block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 
-			 <?php
+		<!-- COLLECTION BLOCK -->
+		<div class="block" id="collection_block">
+			<div class="collection_block_content">
+				<a class="homepage_block_content_link" href="<?php echo get_site_url(); ?>/collectie">
+					<div class="homepage_block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
+				</a>
 
-					 // $collectieImages = get_field('collectie_images');
-					 $collectieImages = get_field('collectie_images');
+			 <!-- <?php
+				//	 $collectieImages = get_field('collectie_images');
 
+				//	 if( $collectieImages ):foreach( $collectieImages as $collectieImages ):
+					//	 $full_image_url= $collectieImages['url'];
 
-					 if( $collectieImages ):foreach( $collectieImages as $collectieImages ):
-						 $full_image_url= $collectieImages['url'];
+				//	 $html =  '<div class="img_wrap">'.
+				//		 						'<div class="collection_block_content_item bstretchMe" data-image-src="'.$full_image_url.'"></div>'.
+				//							'</div';
 
-					 $html =  '<div class="img_wrap">'.
-						 						'<div class="collection_block_content_item bstretchMe" data-image-src="'.$full_image_url.'"></div>'.
-											'</div';
+				//	 echo $html;
 
-					 echo $html;
-
-				 endforeach;
-				 endif;
-				 ?>
+			//	 endforeach;
+			//	 endif;
+				 ?> -->
 
 		 </div> <!-- end collection_block_content -->
 	  </div> <!-- end collection_block -->
-		<div class="block cf" id="portfolio_block">
-		 <div class="portfolio_block_content cf">
 
-				 <!-- check for rows (parent repeater)  // loop through rows (parent repeater) -->
-				 <!-- the '12' is the Portfolio pg ID, which is where you're grabbing the portfolio_section repeater from -->
+		<!-- PORTFOLIO BLOCK -->
+		<div class="block" id="portfolio_block">
+		 <div class="portfolio_block_content">
 
-				 <?php if( have_rows('portfolio_section' , 12) ): while( have_rows('portfolio_section' , 12) ): the_row();
+			 <!-- check for rows (parent repeater)  // loop through rows (parent repeater) -->
+			 <!-- the '12' is the Portfolio pg ID, which is where you're grabbing the portfolio_section repeater from -->
 
-					 	 get_sub_field('prod_gallery' , 12);
+			 	<?php if( have_rows('portfolio_section' , 12) ): while( have_rows('portfolio_section' , 12) ): the_row();
+			 	 get_sub_field('prod_gallery' , 12);
+				 $images = get_sub_field('prod_gallery' , 12);
+				 $firstImage = $images[0];
+				 $portfolioSection = get_sub_field('section_title' , 12);
+		     // this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
+		     $sectionId = preg_replace('/\W+/','',strtolower(strip_tags($portfolioSection)));
+				 ?>
 
-						 $images = get_sub_field('prod_gallery' , 12);
-						 $firstImage = $images[0];
+				  <!-- PORTFOLIO BLOCK IMAGES -->
+				 	<a class="img_wrap_link" href="<?php echo get_site_url(); ?>/portfolio/#<?php echo $sectionId; ?>">
+						<div class="img_wrap">
+							<div class="portfolio_block_content_title"><?php echo $portfolioSection; ?></div>
+							<div class="portfolio_block_content_item bstretchMe" data-image-src="<?php echo $firstImage['url']; ?>"></div>
+						</div>
+				 </a>
+				 <?php endwhile; ?>
+			 <?php endif; ?>
 
-						 $portfolioSection = get_sub_field('section_title' , 12);
-				     // this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
-				     $sectionId = preg_replace('/\W+/','',strtolower(strip_tags($portfolioSection)));
-
-
-					 ?>
-
-					 	<a href="<?php echo get_site_url(); ?>/portfolio/#<?php echo $sectionId; ?>">
-							<div class="img_wrap">
-								<div class="portfolio_block_content_title"><?php echo $portfolioSection; ?></div>
-								<div class="portfolio_block_content_item bstretchMe" data-image-src="<?php echo $firstImage['url']; ?>"></div>
-							</div>
-					 </a>
-
-					 <?php endwhile; ?>
-				 <?php endif; ?>
-
-				 <div class="homepage_block_title" id="portfolio_block_title"><h1>PORTFOLIO</h1></div>
+			 	 <!-- PORTFOLIO BLOCK TITLE -->
+				 <a class="homepage_block_content_link" href="<?php echo get_site_url(); ?>/portfolio">
+				 	<div class="homepage_block_title" id="portfolio_block_title"><h1>PORTFOLIO</h1></div>
+				 </a>
 			 </div> <!--close portfolio_block_content -->
-
 		</div> <!-- close portfolio_block -->
 
-		<div class="block cf" id="maak_block">
-		 <div class="homepage_block_title" id="maak_block_title"><h1>MAAK</h1></div>
+		<!-- MAAK BLOCK -->
+		<div class="block" id="maak_block">
+			<a class="homepage_block_content_link" href="<?php echo get_site_url(); ?>/maak">
+		 		<div class="homepage_block_title" id="maak_block_title"><h1>MAAK</h1></div>
+	 		</a>
 		 <div class="maak_block_content">
 			 <div class="maak_block_content_top"></div>
 			 <p>Houd je van leer, leren tassen en wil je zelf je tas maken? Neem alvast contact op, dit wordt namelijk binnenkort mogelijk!</p>

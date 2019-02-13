@@ -357,6 +357,11 @@ function html5blankcomments($comment, $args, $depth)
 <?php }
 
 
+// Add Options Page, ACF
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/

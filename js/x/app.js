@@ -24,18 +24,12 @@ var ditt = {
     // ditt.display();
 
     // BACKSTRETCH
-    $('.bstretchMe, .item_block_left, .gallery_block_gallery_img').each(function() {
+    $('.bstretchMe, .maak_announcement_img, item_block_left, .gallery_block_gallery_img').each(function() {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
       console.log("backstretchin'")
     })
-
-    // THIS WORKS
-    // var $url = 'http://localhost:8082/wordpress/wp-content/uploads/2018/12/20160627_093012.jpg';
-    //
-    // $('.maak_announcement_img').backstretch($url, { fade: 500 });
-
 
 
     // show/hide options for collection page. uses 'closest' to grab closest elements
@@ -74,7 +68,6 @@ var ditt = {
       $($thatthat).not($(this)).delay(5000).find($bImage).removeClass('non_hover');
       $($thatthat).not($(this)).delay(5000).find('.banner_title').css( "color", "black" );
     });
-
 
   },
 

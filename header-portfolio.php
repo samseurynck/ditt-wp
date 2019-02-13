@@ -23,7 +23,7 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body class="site" <?php body_class(); ?>>
 
 		<!-- wrapper -->
 		<div class="wrapper">

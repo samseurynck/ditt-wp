@@ -11,7 +11,7 @@
             $heroImage = get_field('hero_image');
 
               if( $heroImage ):
-                echo '<div class="maak_announcement_img" data-img-src="'.$heroImage.'"></div>';
+                echo '<div class="maak_announcement_img" data-image-src="'.$heroImage.'"></div>';
               endif;
             ?>
 

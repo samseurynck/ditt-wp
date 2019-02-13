@@ -1,7 +1,19 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				<div class="block" id="footer_block">
+				<?php
+					if ( is_page('maak')) {
+						echo '<div class="block maakFoot" id="footer_block">';
+					} elseif ( is_page('portfolio')) {
+						echo '<div class="block portfolioFoot" id="footer_block">';
+					} elseif ( is_page('collectie')) {
+						echo '<div class="block collectieFoot" id="footer_block">';
+					} else {
+						echo '<div class="block" id="footer_block">';
+					}
+				?>
+
+				<!-- <div class="block" id="footer_block"> -->
 				 <div class="footer_block_left">
 					 <ul class="footer_block_left_list">
 						 <li>lorem ipsum</li>
@@ -9,8 +21,9 @@
 						 <li>lorem ipsum</li>
 					 </ul>
 				 </div>
-				 <div class="footer_block_right bstretchMe" data-image-src="<?php echo get_template_directory_uri();?>/assets/dittbags-footer-purple.png">
-				 </div>
+				 <div class="footer_block_right img_wrap">
+				 	<div class="footer_block_right_img bstretchMe" data-image-src="<?php echo get_template_directory_uri();?>/assets/studio_ditt_bags_bw.png"></div>
+			 	</div>
 			 </div>
 			 </div>
 
