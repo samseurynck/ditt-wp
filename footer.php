@@ -16,9 +16,27 @@
 				<!-- <div class="block" id="footer_block"> -->
 				 <div class="footer_block_left">
 					 <ul class="footer_block_left_list">
-						 <li>lorem ipsum</li>
-						 <li>lorem ipsum</li>
-						 <li>lorem ipsum</li>
+
+						 <li id="site_subtitle"><?php the_field('site_subtitle', 'option'); ?></li>
+
+						 <?php if( have_rows('ditt_info', 'option') ): ?>
+							 <?php while( have_rows('ditt_info', 'option') ): the_row(); ?>
+
+								<li class="footer_text_item"><?php the_sub_field('information_item'); ?></li>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+
+						 <?php if( have_rows('ditt_info_links', 'option') ): ?>
+							 <?php while( have_rows('ditt_info_links', 'option') ): the_row(); ?>
+
+				        <li class="footer_link_item"><a href="<?php the_sub_field('link'); ?>" target="_blank"><?php the_sub_field('text'); ?></a></li>
+
+						    <?php endwhile; ?>
+					  	<?php endif; ?>
+
+							<li><?php the_field('text_before_email', 'option'); ?>  <a href="mailto: <?php the_field('email', 'option'); ?>">email</a></li>
+
 					 </ul>
 				 </div>
 				 <div class="footer_block_right img_wrap">

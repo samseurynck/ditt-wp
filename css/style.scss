@@ -809,9 +809,31 @@ figure{
 					padding: $spacing*2;
 					border-right: $border $dpurple;
 	        .footer_block_left_list{
-	          font-size: .5em;
-						font-weight: 700;
+	          font-size: .6em;
+						line-height: 1.25em;
+						// font-weight: 700;
+						#site_subtitle{
+							font-weight: 700;
+							margin-bottom: .6em;
+						}
+						.footer_link_item, .footer_text_item{
+							margin-bottom: .6em;
+						}
+						a{
+							color:black;
+							opacity: .5;
+							&:hover{
+								opacity:1;
+							}
+						}
 	        }
+					a{
+						color:black;
+						opacity: .5;
+						&:hover{
+							opacity:1;
+						}
+					}
 	      }
 	      .footer_block_right {
 	        position: relative;
@@ -839,6 +861,16 @@ figure{
 							background: $dbrown;
 							color: white;
 							border-right: $border white !important;
+							.footer_block_left_list{
+								color:white;
+								a{
+									color:white !important;
+									opacity: .5;
+									&:hover{
+										opacity:1;
+									}
+								}
+							}
 			      }
 							.footer_block_right{
 								border: none !important;
@@ -860,6 +892,16 @@ figure{
 							background: $dblue !important;
 							color: white;
 							border-right: $border white !important;
+							.footer_block_left_list{
+								color:white;
+								a{
+									color:white !important;
+									opacity: .5;
+									&:hover{
+										opacity:1;
+									}
+								}
+							}
 						}
 							.footer_block_right{
 								border: none !important;
@@ -881,6 +923,16 @@ figure{
 							background: $dpurple !important;
 							color: white;
 							border-right: $border white !important;
+							.footer_block_left_list{
+								color:white;
+								a{
+									color:white !important;
+									opacity: .5;
+									&:hover{
+										opacity:1;
+									}
+								}
+							}
 						}
 							.footer_block_right{
 								border: none !important;
@@ -894,9 +946,5 @@ figure{
 						}
 				}
 			}
-
-
-
-
 	  }
 	}
