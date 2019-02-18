@@ -24,7 +24,7 @@ var ditt = {
     // ditt.display();
 
     // BACKSTRETCH
-    $('.bstretchMe, .maak_announcement_img, item_block_left, .gallery_block_gallery_img').each(function() {
+    $('.bstretchMe, .collection_block_content_item, .maak_announcement_img, .item_block_left, .gallery_block_gallery_img').each(function() {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
@@ -34,10 +34,31 @@ var ditt = {
 
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
-      console.log("opties click")
+
       $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
       $(this).toggleClass('item_block_right_viewoptions_selected');
+
+      var detailsHeight = $('.item_block_right_details').outerHeight();
+      // var blockHeight = $('#item_block').outerHeight();
+      var blockHeight = '200';
+
+      // console.log('totalheight', detailsHeight + blockHeight);
+
+      // $(this).closest('.block').toggle(
+      //   function(){
+      //       $(this).animate({
+      //           height: "200",
+      //       }, 500);
+      //     },
+      //
+      //   function(){
+      //       $(this).animate({
+      //           height: "400",
+      //       }, 500);
+      //
+      // });
+
     });
 
     // SCROLLING FOR HEADERS

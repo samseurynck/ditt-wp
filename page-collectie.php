@@ -64,14 +64,11 @@
 		                            <!-- <?php
 		                                $individualProduct = get_sub_field('indivProd');
 		                                $images            = get_sub_field('images');
+																		$firstImage = $images[0];
 		                            ?> -->
 
-		                            <!-- <?php if ($images): ?>
-		                                <?php foreach ($images as $image): ?>
-		                                    <?php $full_image_url = $image['url']; ?>
-		                                        <div class="item_block_left bstretchMe cf" data-img-src="<?php echo $full_image_url; ?>"></div>
-		                                <?php endforeach; ?>
-		                            <?php endif; ?> -->
+
+																<div class="item_block_left cf" data-image-src="<?php echo $firstImage['url']; ?>"></div>
 
 		                            <?php
 		                                $productName = get_sub_field('product_name');

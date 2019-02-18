@@ -268,6 +268,27 @@ figure{
 
 			//////// HOMEPAGE ////////
 
+			.content_title{
+				position: absolute;
+				bottom:0;
+				text-align: center;
+				z-index:2;
+				color: white;
+				font-weight: bold;
+				width:100%;
+				height:auto;
+				padding-bottom: $spacing;
+				display:none;
+				transition-duration: .5s;
+			}
+
+			@mixin hoverStuff{
+				-webkit-transition-duration: 700ms;
+				-moz-transition-duration: 700ms;
+				-o-transition-duration: 700ms;
+				transition-duration: 700ms;
+			}
+
 			#collection_block {
 				.collection_block_content{
 					height: 100%;
@@ -296,25 +317,37 @@ figure{
 							}
 						}
 					}
-
-					.img_wrap{
+					.img_wrap_link{
 						position: relative;
 						height: 100%;
 						flex-grow: 1;
+						flex-basis: 0;
 						@media screen and (max-width: $break-large) {}
 						@media screen and (max-width: $break-med-large) {}
 						@media screen and (max-width: $break-medium) {}
 						@media screen and (max-width: $break-small-med) {display:none;}
 						@media screen and (max-width: $break-small) {display:none;}
-						.collection_block_content_item{
+						.img_wrap{
 							height:100%;
 							width:100%;
-							@include blendies;
-							// border-right: 1px solid red;
+
 							&:hover{
-								-webkit-filter: none;
-								filter: none;
-								opacity: 1;
+								> #collection_block_content_title{
+									@include hoverStuff;
+									display: block;
+									padding-bottom: 25px;
+								}
+							}
+							.collection_block_content_item{
+								height:100%;
+								width:100%;
+								@include blendies;
+								// border-right: 1px solid red;
+								&:hover{
+									-webkit-filter: none;
+									filter: none;
+									opacity: 1;
+								}
 							}
 						}
 					}
@@ -349,11 +382,8 @@ figure{
 							background-color: $dblue;
 
 							&:hover{
-								> .portfolio_block_content_title{
-									-webkit-transition-duration: 700ms;
-									-moz-transition-duration: 700ms;
-									-o-transition-duration: 700ms;
-									transition-duration: 700ms;
+								> #portfolio_block_content_title{
+									@include hoverStuff;
 									display: block;
 									padding-bottom: 25px;
 								}
@@ -522,7 +552,9 @@ figure{
 				}
 
 			#item_block {
-				height:auto;
+				display:block !important;
+				height:200px;
+
 				.item_block_left {
 					position: relative;
 					height: 100%;
@@ -540,6 +572,7 @@ figure{
 					background: white !important;
 					color: $dpurple !important;
 					border-top: $border $dpurple !important;
+					height:auto;
 				}
 				.item_block_right{
 					width: $right-proportion;

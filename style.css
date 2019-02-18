@@ -2743,6 +2743,18 @@ body {
       background: #98838A !important; }
       body .container .purple_nav .nav_block_left {
         border-right: 1.5px dashed white; }
+    body .container .content_title {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      z-index: 2;
+      color: white;
+      font-weight: bold;
+      width: 100%;
+      height: auto;
+      padding-bottom: 20px;
+      display: none;
+      transition-duration: .5s; }
     body .container #collection_block .collection_block_content {
       height: 100%;
       width: 100%;
@@ -2762,28 +2774,39 @@ body {
           justify-content: space-around; }
           body .container #collection_block .collection_block_content a #collection_block_title h1 {
             align-self: center; }
-      body .container #collection_block .collection_block_content .img_wrap {
+      body .container #collection_block .collection_block_content .img_wrap_link {
         position: relative;
         height: 100%;
-        flex-grow: 1; }
+        flex-grow: 1;
+        flex-basis: 0; }
         @media screen and (max-width: 425px) {
-          body .container #collection_block .collection_block_content .img_wrap {
+          body .container #collection_block .collection_block_content .img_wrap_link {
             display: none; } }
         @media screen and (max-width: 375px) {
-          body .container #collection_block .collection_block_content .img_wrap {
+          body .container #collection_block .collection_block_content .img_wrap_link {
             display: none; } }
-        body .container #collection_block .collection_block_content .img_wrap .collection_block_content_item {
+        body .container #collection_block .collection_block_content .img_wrap_link .img_wrap {
           height: 100%;
-          width: 100%;
-          background-blend-mode: screen;
-          -webkit-filter: grayscale(100%) contrast(120%) brightness(110%);
-          filter: grayscale(100%) contrast(120%) brightness(110%);
-          opacity: .4;
-          transition-duration: .5s; }
-          body .container #collection_block .collection_block_content .img_wrap .collection_block_content_item:hover {
-            -webkit-filter: none;
-            filter: none;
-            opacity: 1; }
+          width: 100%; }
+          body .container #collection_block .collection_block_content .img_wrap_link .img_wrap:hover > #collection_block_content_title {
+            -webkit-transition-duration: 700ms;
+            -moz-transition-duration: 700ms;
+            -o-transition-duration: 700ms;
+            transition-duration: 700ms;
+            display: block;
+            padding-bottom: 25px; }
+          body .container #collection_block .collection_block_content .img_wrap_link .img_wrap .collection_block_content_item {
+            height: 100%;
+            width: 100%;
+            background-blend-mode: screen;
+            -webkit-filter: grayscale(100%) contrast(120%) brightness(110%);
+            filter: grayscale(100%) contrast(120%) brightness(110%);
+            opacity: .4;
+            transition-duration: .5s; }
+            body .container #collection_block .collection_block_content .img_wrap_link .img_wrap .collection_block_content_item:hover {
+              -webkit-filter: none;
+              filter: none;
+              opacity: 1; }
     body .container #portfolio_block .portfolio_block_content {
       position: relative;
       height: 100%;
@@ -2810,7 +2833,7 @@ body {
           width: 100%;
           height: 100%;
           background-color: #536164; }
-          body .container #portfolio_block .portfolio_block_content .img_wrap_link .img_wrap:hover > .portfolio_block_content_title {
+          body .container #portfolio_block .portfolio_block_content .img_wrap_link .img_wrap:hover > #portfolio_block_content_title {
             -webkit-transition-duration: 700ms;
             -moz-transition-duration: 700ms;
             -o-transition-duration: 700ms;
@@ -2940,7 +2963,8 @@ body {
       color: #98838A;
       padding: 20px 0 20px 20px; }
     body .container #item_block {
-      height: auto; }
+      display: block !important;
+      height: 200px; }
       body .container #item_block .item_block_left {
         position: relative;
         height: 100%;
@@ -2951,7 +2975,8 @@ body {
       body .container #item_block .item_block_right_selected {
         background: white !important;
         color: #98838A !important;
-        border-top: 1.5px dashed #98838A !important; }
+        border-top: 1.5px dashed #98838A !important;
+        height: auto; }
       body .container #item_block .item_block_right {
         width: 60%;
         height: 100%;

@@ -9,21 +9,47 @@
 					<div class="homepage_block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 				</a>
 
-			 <!-- <?php
-				//	 $collectieImages = get_field('collectie_images');
+				<?php
 
-				//	 if( $collectieImages ):foreach( $collectieImages as $collectieImages ):
-					//	 $full_image_url= $collectieImages['url'];
+				// check for rows (parent repeater) // loop through rows (parent repeater)
+				if( have_rows('pSect' , 2) ): while( have_rows('pSect' , 2) ): the_row();
 
-				//	 $html =  '<div class="img_wrap">'.
-				//		 						'<div class="collection_block_content_item bstretchMe" data-image-src="'.$full_image_url.'"></div>'.
-				//							'</div';
+					// get_sub_field('pSecTitle' , 2);
+					$productSection = get_sub_field('pSecTitle' , 2);
+					// this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
+					$sectionId = preg_replace('/\W+/','',strtolower(strip_tags($productSection)));
 
-				//	 echo $html;
+					?>
 
-			//	 endforeach;
-			//	 endif;
-				 ?> -->
+					<a class="img_wrap_link" href="<?php echo get_site_url(); ?>/collectie/#<?php echo $sectionId; ?>">
+						<div class="img_wrap">
+
+							<?php
+
+							// check for rows (sub repeater) // loop through rows (sub repeater)
+							if( have_rows('prods' , 2) ): while( have_rows('prods' , 2) ): the_row();
+
+								// check for rows (sub repeater) // loop through rows (sub repeater)
+								if( have_rows('indivProd' , 2) ): while( have_rows('indivProd' , 2) ): the_row();
+
+								// get_sub_field('images' , 2);
+								get_sub_field('prods' , 2);
+								get_sub_field('indivProd' , 2);
+								$images = get_sub_field('images' , 2);
+								$firstImage = $images[0];
+
+								?>
+										<div class="content_title" id="collection_block_content_title"><?php echo $productSection; ?></div>
+				 						<div class="collection_block_content_item" data-image-src="<?php echo $firstImage['url']; ?>"></div>
+
+										<?php endwhile; //while( get_sub_field('indivProd') ):?>
+									<?php endif; //if( get_sub_field('indivProd') ): ?>
+								<?php endwhile; //while( get_sub_field('prods') ):?>
+							<?php endif; //if( get_sub_field('prods') ): ?>
+							</div>
+						</a>
+					<?php endwhile; // while( has_sub_field('pSect') ): ?>
+				<?php endif; // if( get_field('pSect') ): ?>
 
 		 </div> <!-- end collection_block_content -->
 	  </div> <!-- end collection_block -->
@@ -47,7 +73,7 @@
 				  <!-- PORTFOLIO BLOCK IMAGES -->
 				 	<a class="img_wrap_link" href="<?php echo get_site_url(); ?>/portfolio/#<?php echo $sectionId; ?>">
 						<div class="img_wrap">
-							<div class="portfolio_block_content_title"><?php echo $portfolioSection; ?></div>
+							<div class="content_title" id="portfolio_block_content_title"><?php echo $portfolioSection; ?></div>
 							<div class="portfolio_block_content_item bstretchMe" data-image-src="<?php echo $firstImage['url']; ?>"></div>
 						</div>
 				 </a>
