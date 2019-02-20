@@ -2964,14 +2964,16 @@ body {
       padding: 20px 0 20px 20px; }
     body .container #item_block {
       display: block !important;
-      height: 200px; }
+      height: auto;
+      min-height: 400px; }
       body .container #item_block .item_block_left {
         position: relative;
         height: 100%;
         width: 40%;
         background: #DDD4D7;
         display: inline-block;
-        border-top: 1.5px dashed white; }
+        border-top: 1.5px dashed white;
+        min-height: 400px; }
       body .container #item_block .item_block_right_selected {
         background: white !important;
         color: #98838A !important;
@@ -2986,18 +2988,20 @@ body {
         float: right;
         border-top: 1.5px dashed white;
         color: white;
-        padding: 20px; }
+        padding: 20px;
+        min-height: 400px;
+        height: 100%; }
         body .container #item_block .item_block_right .item_block_right_header {
           display: flex;
-          width: 100%;
-          padding-bottom: 40px; }
-          body .container #item_block .item_block_right .item_block_right_header .item_block_right_header_list {
-            width: 60%; }
+          flex-wrap: wrap;
+          margin-bottom: 1em; }
+          body .container #item_block .item_block_right .item_block_right_header #product_title {
+            width: 100%; }
+          body .container #item_block .item_block_right .item_block_right_header #product_subtitle, body .container #item_block .item_block_right .item_block_right_header .item_block_right_viewoptions {
+            width: 50%;
+            line-height: 2em; }
           body .container #item_block .item_block_right .item_block_right_header .item_block_right_viewoptions {
-            width: 40%;
-            align-self: flex-end;
-            text-align: right;
-            cursor: pointer; }
+            text-align: right; }
         body .container #item_block .item_block_right .item_block_right_details {
           display: none; }
           body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {

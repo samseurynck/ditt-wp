@@ -78,10 +78,12 @@
 
 		                            <div class="item_block_right cf">
 		                                <div class="item_block_right_header cf">
-		                                    <ul class="item_block_right_header_list">
+																			<li id="product_title"><?php echo $productName; ?></li>
+																			<li id="product_subtitle"><?php echo $productType; ?></li>
+		                                    <!-- <ul class="item_block_right_header_list">
 		                                        <li id="product_title"><?php echo $productName; ?></li>
-		                                        <li id="product_subtitle"><?php $productType; ?></li>
-		                                    </ul>
+		                                        <li id="product_subtitle"><?php echo $productType; ?></li>
+		                                    </ul> -->
 		                                	<div class="item_block_right_viewoptions">bestellen opties</div>
 																		</div>
 

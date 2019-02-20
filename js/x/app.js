@@ -35,27 +35,37 @@ var ditt = {
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
 
-      $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
+      $(this).closest('.item_block_right').find('.item_block_right_details').toggle("fast");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
       $(this).toggleClass('item_block_right_viewoptions_selected');
 
-      var detailsHeight = $('.item_block_right_details').outerHeight();
-      // var blockHeight = $('#item_block').outerHeight();
-      var blockHeight = '200';
+      var detailsHeight = $('.item_block_right').outerHeight();
+      console.log('detailsHeight');
+      var blockHeight = '400';
 
-      // console.log('totalheight', detailsHeight + blockHeight);
+      // BACKSTRETCH
+      $('.item_block_left').each(function() {
+        $(this).backstretch($(this).attr('data-image-src'), {
+          fade: 200
+        });
+      })
+
 
       // $(this).closest('.block').toggle(
       //   function(){
-      //       $(this).animate({
-      //           height: "200",
-      //       }, 500);
-      //     },
+      //     console.log('click 01');
       //
-      //   function(){
-      //       $(this).animate({
-      //           height: "400",
-      //       }, 500);
+      //       // $(this).animate({
+      //       //      // height: "auto",
+      //       // }, 500);
+      //   //   },
+      //   //
+      //   // function(){
+      //   //   console.log('click 02');
+      //   //     // $(this).animate({
+      //   //     //     // height: "400px",
+      //   //     //
+      //   //     // }, 500);
       //
       // });
 
