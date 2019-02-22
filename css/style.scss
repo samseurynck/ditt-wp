@@ -549,13 +549,20 @@ figure{
 				text-align:left;
 				color: $dpurple;
 				padding: $spacing 0 $spacing $spacing;
+				border-top: $border $dpurple;
 				}
 
 			#item_block {
-				display:block !important;
-				height: auto;
-				min-height:400px;
+				display:flex;
+				// height: auto;
+				// height:400px;
+
 				// max-height:400px;
+
+				.detailsOpen{
+					height:auto !important;
+					min-height:400px;
+				}
 
 				.item_block_left {
 					position: relative;
@@ -580,7 +587,7 @@ figure{
 				.item_block_right{
 					width: $right-proportion;
 					height:100%;
-					display:inline-flex;
+					// display:inline-flex;
 					flex-direction: column;
 					background: $dpurple;
 					float:right;
@@ -588,7 +595,6 @@ figure{
 					color:white;
 					padding: $spacing;
 					min-height:400px;
-					height:100%;
 					.item_block_right_header{
 						display: flex;
 						flex-wrap: wrap;
@@ -655,6 +661,12 @@ figure{
 					display: inline-block;
 					// background: $dbrown;
 					float: left;
+
+					@media screen and (max-width: $break-small) {}
+					@media screen and (max-width: $break-small-med) {display:none;}
+					@media screen and (max-width: $break-medium) {}
+					@media screen and (max-width: $break-med-large) {}
+					@media screen and (max-width: $break-large) {}
 				}
 				.maak_announcement_text {
 					height: 100vh;
@@ -664,6 +676,11 @@ figure{
 					justify-content: center;
 					float: right;
 					padding: $spacing*2 $spacing*4 $spacing*2 $spacing*2;
+					@media screen and (max-width: $break-small) {}
+					@media screen and (max-width: $break-small-med) {width:100%}
+					@media screen and (max-width: $break-medium) {}
+					@media screen and (max-width: $break-med-large) {}
+					@media screen and (max-width: $break-large) {}
 					h1{
 						margin:0 0 $spacing 0;
 						padding:0;
@@ -837,7 +854,7 @@ figure{
 							margin-bottom: .6em;
 						}
 						.footer_link_item, .footer_text_item{
-							margin-bottom: .6em;
+							// margin-bottom: .6em;
 						}
 						a{
 							color:black;

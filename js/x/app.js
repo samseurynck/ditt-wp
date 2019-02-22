@@ -24,18 +24,34 @@ var ditt = {
     // ditt.display();
 
     // BACKSTRETCH
-    $('.bstretchMe, .collection_block_content_item, .maak_announcement_img, .item_block_left, .gallery_block_gallery_img').each(function() {
+    $('.bstretchMe, .collection_block_content_item, .maak_announcement_img, .gallery_block_gallery_img').each(function() {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
       console.log("backstretchin'")
     })
 
+    $('.item_block_left').each(function() {
+      $(this).backstretch($(this).attr('data-image-src'), {
+        fade: 200
+      });
+      console.log("backstretchin'")
+    })
+
+    var bstretchResize = $(".item_block_left").data("backstretch");
 
     // show/hide options for collection page. uses 'closest' to grab closest elements
     $('.item_block_right_viewoptions').click(function() {
 
-      $(this).closest('.item_block_right').find('.item_block_right_details').toggle("fast");
+      $('.block').toggleClass(function () {
+        $("this").addClass("detailsOpen");
+        $('.item_block_left').css('height', 'auto');
+        bstretchResize.resize();
+      }, function () {
+        $("this").removeClass("detailsOpen");
+      });
+
+      $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
       $(this).toggleClass('item_block_right_viewoptions_selected');
 
@@ -44,31 +60,11 @@ var ditt = {
       var blockHeight = '400';
 
       // BACKSTRETCH
-      $('.item_block_left').each(function() {
-        $(this).backstretch($(this).attr('data-image-src'), {
-          fade: 200
-        });
-      })
-
-
-      // $(this).closest('.block').toggle(
-      //   function(){
-      //     console.log('click 01');
-      //
-      //       // $(this).animate({
-      //       //      // height: "auto",
-      //       // }, 500);
-      //   //   },
-      //   //
-      //   // function(){
-      //   //   console.log('click 02');
-      //   //     // $(this).animate({
-      //   //     //     // height: "400px",
-      //   //     //
-      //   //     // }, 500);
-      //
-      // });
-
+      // $('.item_block_left').each(function() {
+      //   $(this).backstretch($(this).attr('data-image-src'), {
+      //     fade: 200
+      //   });
+      // })
     });
 
     // SCROLLING FOR HEADERS
@@ -104,15 +100,11 @@ var ditt = {
 
   resize: function() {
 
-    console.log('Resizing...');
-
     ditt.display();
 
   },
 
   display: function() {
-
-    console.log('Displaying...');
 
   }
 

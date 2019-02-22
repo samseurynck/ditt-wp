@@ -2961,11 +2961,13 @@ body {
       height: auto;
       text-align: left;
       color: #98838A;
-      padding: 20px 0 20px 20px; }
+      padding: 20px 0 20px 20px;
+      border-top: 1.5px dashed #98838A; }
     body .container #item_block {
-      display: block !important;
-      height: auto;
-      min-height: 400px; }
+      display: flex; }
+      body .container #item_block .detailsOpen {
+        height: auto !important;
+        min-height: 400px; }
       body .container #item_block .item_block_left {
         position: relative;
         height: 100%;
@@ -2982,15 +2984,13 @@ body {
       body .container #item_block .item_block_right {
         width: 60%;
         height: 100%;
-        display: inline-flex;
         flex-direction: column;
         background: #98838A;
         float: right;
         border-top: 1.5px dashed white;
         color: white;
         padding: 20px;
-        min-height: 400px;
-        height: 100%; }
+        min-height: 400px; }
         body .container #item_block .item_block_right .item_block_right_header {
           display: flex;
           flex-wrap: wrap;
@@ -3027,6 +3027,9 @@ body {
       width: 40%;
       display: inline-block;
       float: left; }
+      @media screen and (max-width: 425px) {
+        body .container #maak_announcement_block .maak_announcement_img {
+          display: none; } }
     body .container #maak_announcement_block .maak_announcement_text {
       height: 100vh;
       width: 60%;
@@ -3035,6 +3038,9 @@ body {
       justify-content: center;
       float: right;
       padding: 40px 80px 40px 40px; }
+      @media screen and (max-width: 425px) {
+        body .container #maak_announcement_block .maak_announcement_text {
+          width: 100%; } }
       body .container #maak_announcement_block .maak_announcement_text h1 {
         margin: 0 0 20px 0;
         padding: 0; }
@@ -3168,8 +3174,6 @@ body {
           line-height: 1.25em; }
           body .container #footer_block .footer_block_left .footer_block_left_list #site_subtitle {
             font-weight: 700;
-            margin-bottom: .6em; }
-          body .container #footer_block .footer_block_left .footer_block_left_list .footer_link_item, body .container #footer_block .footer_block_left .footer_block_left_list .footer_text_item {
             margin-bottom: .6em; }
           body .container #footer_block .footer_block_left .footer_block_left_list a {
             color: black;

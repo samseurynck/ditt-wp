@@ -57,7 +57,7 @@
 		            <?php while (have_rows('prods')): ?>
 		                <?php the_row(); ?>
 		                <?php $products = get_sub_field('prods'); ?>
-		                <div class="block cf" id="item_block">
+		                <div class="block" id="item_block">
 		                    <?php if (have_rows('indivProd')): ?>
 		                        <?php while (have_rows('indivProd')): ?>
 		                            <?php the_row(); ?>
@@ -65,10 +65,12 @@
 		                                $individualProduct = get_sub_field('indivProd');
 		                                $images            = get_sub_field('images');
 																		$firstImage = $images[0];
+																		$orderDetailsTitle = get_sub_field('orderDetsTit');
+																		$orderDetailsText = get_sub_field('orderDetsTxt');
 		                            ?> -->
 
 
-																<div class="item_block_left cf" data-image-src="<?php echo $firstImage['url']; ?>"></div>
+																<div class="item_block_left" data-image-src="<?php echo $firstImage['url']; ?>"></div>
 
 		                            <?php
 		                                $productName = get_sub_field('product_name');
@@ -76,7 +78,7 @@
 		                            ?>
 
 
-		                            <div class="item_block_right cf">
+		                            <div class="item_block_right">
 		                                <div class="item_block_right_header cf">
 																			<li id="product_title"><?php echo $productName; ?></li>
 																			<li id="product_subtitle"><?php echo $productType; ?></li>
@@ -115,12 +117,10 @@
 			                                        <?php endwhile; ?>
 			                                    <?php endif; ?>
 			                                </div>
-				                                <div class="item_block_right_details_ordering">
-				                                    <h5 class="item_block_right_details_orderingtitle">Lorem Ipsum</h5>
-				                                    <p class="item_block_right_details_orderingp">
-				                                        All products created through DITT Bags are custom made. Details such as color, size and detailing will be discussed upon the beginning of a new project. To order a bag and begin a new project, send an inquiry to  inquiries@dittbags.com
-				                                    </p>
-				                                </div>
+																				<div class="item_block_right_details_ordering">
+																						<h5 class="item_block_right_details_orderingtitle"><?php echo $orderDetailsTitle; ?></h5>
+																						<p class="item_block_right_details_orderingp"><?php echo $orderDetailsText; ?></p>
+																				</div>
 																			</div>
 			                            </div>
 		                        <?php endwhile; ?>
