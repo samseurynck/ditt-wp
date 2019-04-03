@@ -67,13 +67,15 @@
 																		$firstImage = $images[0];
 																		$orderDetailsTitle = get_sub_field('orderDetsTit');
 																		$orderDetailsText = get_sub_field('orderDetsTxt');
+
 		                            ?> -->
 
 
-																<div class="item_block_left" data-image-src="<?php echo $firstImage['url']; ?>"></div>
+																	 <div class="item_block_left" data-image-src="<?php //echo $firstImage['url']; ?>" data-image-array='[<?php foreach( $images as $image ): ?>"<?php echo $image['url']; ?>",<?php endforeach; ?>]'></div>
 
 		                            <?php
-		                                $productName = get_sub_field('product_name');
+
+																		$productName = get_sub_field('product_name');
 		                                $productType = get_sub_field('product_type');
 		                            ?>
 
@@ -89,7 +91,7 @@
 		                                	<div class="item_block_right_viewoptions">bestellen opties</div>
 																		</div>
 
-			                            <div class="item_block_right_details cf">
+			                            <div class="item_block_right_details item_block_right_details_hide cf">
 			                                <div class="item_block_right_details_specs">
 			                                    <h5 class="item_block_right_details_specstitle">Lorem Ipsum</h5>
 			                                        <ul class="item_block_right_details_specslist">

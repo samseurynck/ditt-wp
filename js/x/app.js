@@ -28,15 +28,27 @@ var ditt = {
       $(this).backstretch($(this).attr('data-image-src'), {
         fade: 200
       });
-      console.log("backstretchin'")
     })
 
+
+
     $('.item_block_left').each(function() {
-      $(this).backstretch($(this).attr('data-image-src'), {
-        fade: 200
-      });
-      console.log("backstretchin'")
+
+      var imgArray = $(this).data('image-array');
+      var arrayLength = imgArray.length;
+      console.log('before' + imgArray);
+
+
+        $(this).backstretch(imgArray, {
+          fade: 200
+        });
+        $(".item_block_left").data("backstretch");
+
+        // console.log(imgArray);
+
+      console.log('after' + imgArray);
     })
+
 
     var bstretchResize = $(".item_block_left").data("backstretch");
 
@@ -47,24 +59,13 @@ var ditt = {
         $("this").addClass("detailsOpen");
         $('.item_block_left').css('height', 'auto');
         bstretchResize.resize();
-      }, function () {
-        $("this").removeClass("detailsOpen");
+        console.log('open');
       });
 
-      $(this).closest('.item_block_right').find('.item_block_right_details').toggle("slow");
+      $(this).closest('.item_block_right').find('.item_block_right_details').slideToggle("fast");
+      $(this).closest('.item_block_right').find('.item_block_right_details').toggleClass("item_block_right_details_show");
       $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
-      $(this).toggleClass('item_block_right_viewoptions_selected');
 
-      var detailsHeight = $('.item_block_right').outerHeight();
-      console.log('detailsHeight');
-      var blockHeight = '400';
-
-      // BACKSTRETCH
-      // $('.item_block_left').each(function() {
-      //   $(this).backstretch($(this).attr('data-image-src'), {
-      //     fade: 200
-      //   });
-      // })
     });
 
     // SCROLLING FOR HEADERS

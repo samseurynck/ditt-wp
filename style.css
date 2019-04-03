@@ -2980,7 +2980,8 @@ body {
         background: white !important;
         color: #98838A !important;
         border-top: 1.5px dashed #98838A !important;
-        height: auto; }
+        height: auto;
+        display: flex; }
       body .container #item_block .item_block_right {
         width: 60%;
         height: 100%;
@@ -3004,24 +3005,32 @@ body {
             text-align: right; }
         body .container #item_block .item_block_right .item_block_right_details {
           display: none; }
+          body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_show {
+            display: flex;
+            flex-direction: row;
+            background: green; }
           body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_specs {
             width: 60%;
             float: left;
-            padding-bottom: 20px; }
+            padding-bottom: 20px;
+            display: inline-block; }
           body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren {
             width: 40%;
             float: right;
-            padding: 0 0 20px 20px; }
+            padding: 0 0 20px 20px;
+            display: inline-block; }
             body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_kleuren #item_block_right_details_kleuren_swatches {
               position: relative;
               display: inline-block;
               height: 20px;
               width: 20px;
-              float: left; }
+              float: left;
+              display: inline-block; }
           body .container #item_block .item_block_right .item_block_right_details .item_block_right_details_ordering {
             width: 60%;
             float: left;
-            padding-bottom: 20px; }
+            padding-bottom: 20px;
+            display: inline-block; }
     body .container #maak_announcement_block .maak_announcement_img {
       height: 100vh;
       width: 40%;
@@ -3093,10 +3102,11 @@ body {
       justify-content: flex-start;
       align-items: flex-start;
       align-content: flex-start;
-      min-height: 200px; }
-      @media screen and (max-width: 900px) {
-        body .container .over_block {
-          height: calc(85vh - 100px); } }
+      min-height: 200px;
+      overflow-y: hidden; }
+      body .container .over_block #fourOfour {
+        font-size: 7em;
+        font-weight: bold; }
       body .container .over_block p {
         width: 40%;
         margin-left: 20px;

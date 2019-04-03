@@ -1,24 +1,19 @@
 <?php get_header(); ?>
 
 	<main role="main">
-		<!-- section -->
-		<section>
 
-			<!-- article -->
-			<article id="post-404">
+		<div class="over_block">
+			<p class="fourOfourText" id="fourOfour">404<p>
+			<p class="fourOfourText">Content not found!</p>
+		</div>
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
+	 <div class="over_bg_block" id="over_bg_block_left">
+		 <div class="bg_topContent" id="bg_block_left_topContent"></div>
+		 <div class="bg_bottomContent" id="bg_block_left_bottomContent"></div>
+	 </div>
 
-			</article>
-			<!-- /article -->
-
-		</section>
-		<!-- /section -->
+		<div class="over_bg_block" id="over_bg_block_right"></div>
 	</main>
 
-<?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+<!-- <?php //get_footer(); ?> -->
