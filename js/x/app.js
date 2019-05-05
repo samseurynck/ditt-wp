@@ -30,43 +30,64 @@ var ditt = {
       });
     })
 
-
+    var clicked = false;
 
     $('.item_block_left').each(function() {
 
-      var imgArray = $(this).data('image-array');
-      var arrayLength = imgArray.length;
-      console.log('before' + imgArray);
+      var imgArrayString = $(this).data('image-array');
+      var imgArray = imgArrayString.split(',');
+      var heroImage = imgArray[0];
 
+      console.log(imgArray);
 
-        $(this).backstretch(imgArray, {
-          fade: 200
-        });
-        $(".item_block_left").data("backstretch");
+        // originally goes here
+        // $(this).backstretch(imgArray, {fade: 200, duration: 1000});
 
-        // console.log(imgArray);
+        // displays first image in the array instead
+        $(this).backstretch(heroImage, {fade: 200});
 
-      console.log('after' + imgArray);
     })
 
+    var instance = $(".item_block_left").data("backstretch");
 
-    var bstretchResize = $(".item_block_left").data("backstretch");
-
-    // show/hide options for collection page. uses 'closest' to grab closest elements
+    // COLLECTIE PAGE TOGGLES
     $('.item_block_right_viewoptions').click(function() {
 
-      $('.block').toggleClass(function () {
-        $("this").addClass("detailsOpen");
-        $('.item_block_left').css('height', 'auto');
-        bstretchResize.resize();
-        console.log('open');
+      clicked = !clicked;
+
+      var isVisible = $( "#showOptions" ).is( ":visible" );
+      var isHidden = $( "#showOptions" ).is( ":hidden" );
+
+      $(this)
+        .find('#showOptions').toggle();
+
+      $(this)
+        .find('#hideOptions').toggle();
+
+        $("#showOptions:visible").css('display', 'inline-block');
+        $("#hideOptions:visible").css('display', 'inline-block');
+
+      $(this)
+        .closest('.item_block_right')
+        .toggleClass('item_block_right_selected');
+
+        $(this)
+          .closest('.item_block_right')
+            .find('.item_block_right_details')
+              .slideToggle(function() {
+          instance.resize();
+        });
+
+        $(this)
+          .toggleClass('item_block_right_viewoptions_selected');
+
+      $('.block').toggleClass(function() {
+
       });
 
-      $(this).closest('.item_block_right').find('.item_block_right_details').slideToggle("fast");
-      $(this).closest('.item_block_right').find('.item_block_right_details').toggleClass("item_block_right_details_show");
-      $(this).closest('.item_block_right').toggleClass( "item_block_right_selected" );
-
     });
+
+
 
     // SCROLLING FOR HEADERS
     $('.nav_block_right .nav_block_right_submenu li a[href*="#"]').on('click', function (e) {
@@ -96,6 +117,8 @@ var ditt = {
       $($thatthat).not($(this)).delay(5000).find($bImage).removeClass('non_hover');
       $($thatthat).not($(this)).delay(5000).find('.banner_title').css( "color", "black" );
     });
+
+
 
   },
 

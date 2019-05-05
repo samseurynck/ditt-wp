@@ -5,43 +5,6 @@
 
 	<main role="main" class="site-content">
 
-		<!-- <div class="block_title cf" id="collectie_block_title">Tassen</div>
-
-		<div class="block cf" id="item_block">
-	    <div class="item_block_left cf">
-				img img img make this a backstretch slideshow that autoplays when item is selected
-	    </div>
-	    <div class="item_block_right cf">
-	      <div class="item_block_right_header cf">
-	        <ul class="item_block_right_header_list">
-	          <li id="product_title">SANNE</li>
-	          <li id="product_subtitle">leren backpack XL</li>
-	        </ul>
-	        <div class="item_block_right_viewoptions">bestellen opties</div>
-	      </div>
-	      <div class="item_block_right_details cf">
-					<div class="item_block_right_details_specs">
-		        <h5 class="item_block_right_details_specstitle">Lorem Ipsum</h5>
-		        <ul class="item_block_right_details_specslist">
-		          <li>lorem ipsum</li>
-		          <li>lorem ipsum</li>
-		          <li>lorem ipsum</li>
-		        </ul>
-					</div>
-					<div class="item_block_right_details_kleuren">
-						<p id="item_block_right_details_kleuren_title">Kleuren</p>
-						<div id="item_block_right_details_kleuren_swatches">,.,.,.,.,.,.,</div>
-					</div>
-					<div class="item_block_right_details_ordering">
-		        <h5 class="item_block_right_details_orderingtitle">Lorem Ipsum</h5>
-		        <p class="item_block_right_details_orderingp">
-		          All products created through DITT Bags are custom made. Details such as color, size and detailing will be discussed upon the beginning of a new project. To order a bag and begin a new project, send an inquiry to  inquiries@dittbags.com
-		        </p>
-					</div>
-	      </div>
-	    </div>
-		</div> -->
-
 		<?php if (have_rows('pSect')): ?>
 		    <?php while (have_rows('pSect')) : ?>
 		        <?php the_row(); ?>
@@ -59,21 +22,33 @@
 		                <?php $products = get_sub_field('prods'); ?>
 		                <div class="block" id="item_block">
 		                    <?php if (have_rows('indivProd')): ?>
-		                        <?php while (have_rows('indivProd')): ?>
-		                            <?php the_row(); ?>
-		                            <!-- <?php
+		                        <?php while (have_rows('indivProd')): the_row();
+
 		                                $individualProduct = get_sub_field('indivProd');
 		                                $images            = get_sub_field('images');
 																		$firstImage = $images[0];
 																		$orderDetailsTitle = get_sub_field('orderDetsTit');
 																		$orderDetailsText = get_sub_field('orderDetsTxt');
 
-		                            ?> -->
+																		$imgStringArray = '';
+																		$loopCount = 0;
+																		$len = count($images);
+
+																		foreach ($images as $image):
+																			if ($i == $len - 1) {
+																				$imgStringArray .= $image['url'];
+																	    } else {
+																				$imgStringArray .= $image['url'].', ';
+																			}
+																			$loopCount++;
+																		endforeach;
+
+																		$html .=	'<div>'.
+																								'<h1>Title</h1>'.
+																							'</div>';
 
 
-																	 <div class="item_block_left" data-image-src="<?php //echo $firstImage['url']; ?>" data-image-array='[<?php foreach( $images as $image ): ?>"<?php echo $image['url']; ?>",<?php endforeach; ?>]'></div>
-
-		                            <?php
+																	echo '<div class="item_block_left" data-image-src="" data-image-array="'.$imgStringArray.'"></div>';
 
 																		$productName = get_sub_field('product_name');
 		                                $productType = get_sub_field('product_type');
@@ -88,7 +63,7 @@
 		                                        <li id="product_title"><?php echo $productName; ?></li>
 		                                        <li id="product_subtitle"><?php echo $productType; ?></li>
 		                                    </ul> -->
-		                                	<div class="item_block_right_viewoptions">bestellen opties</div>
+		                                	<div class="item_block_right_viewoptions"><span class="showhide" id="showOptions">show</span><span class="showhide" id="hideOptions">hide</span> details</div>
 																		</div>
 
 			                            <div class="item_block_right_details item_block_right_details_hide cf">

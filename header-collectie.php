@@ -82,7 +82,7 @@
 
 										</ul>
 							      <div class="nav_block_right_options">
-											<a href="<?php echo get_page_link(15); ?>">over</a><span>nl</span><span>/</span><span>en</span>
+											 <a href="<?php echo get_page_link(15); ?>">info.</a><!--<span>nl</span><span>/</span><span>en</span> -->
 							      </div>
 							    </div>
 							  </div>

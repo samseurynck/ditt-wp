@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main" class="site-content">
+	<!-- <main role="main" class="site-content">
 		<div class="block cf" id="collection_block">
 		 <div class="block_title" id="collection_block_title"><h1>COLLECTIE</h1></div>
 		 <div class="collection_block_content cf">
@@ -29,6 +29,6 @@
 			 <div class="maak_block_content_bottom" id="maak-link"><h3><a href="<?php echo get_template_directory_uri(); ?> /maak"> Binnenkort beschikbaar</a></h3></div>
 		 </div>
 		</div>
-	</main>
+	</main> -->
 
 <?php get_footer(); ?>

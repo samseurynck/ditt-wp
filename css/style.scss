@@ -36,12 +36,14 @@ html {
 
 // SITE SPACING
 $spacing: 20px;
+$spacing-mobile: 10px;
 $left-proportion: 40%;
 $right-proportion: 60%;
 $twenty-percent: 20%;
 $width: width;
-$border: 1.5px dashed;
+$border: 1.25px dashed;
 $nav-height: 100px;
+$nav-height-mobile: 50px;
 
 // SITE COLORS
 $black: #020302;
@@ -143,17 +145,44 @@ figure{
 	    #nav_block {
 				height:$nav-height;
 				flex-shrink: 0;
+				display: flex;
+
 	      .nav_block_left {
 	        position: relative;
 	        height: 100%;
 	        width: $left-proportion;
 					padding:$spacing;
-	        display: inline-block;
-	        img{
-	          height:100%;
-	        }
+	        display: flex;
+					flex-direction: row;
+					align-content: space-between;
+
+					#logo{
+						height:100%;
+						display: block;
+						align-self: center;
+
+						img{
+							height:100%;
+							@media screen and (max-width: $break-large) {}
+							@media screen and (max-width: $break-med-large) {}
+							@media screen and (max-width: $break-medium) {}
+							@media screen and (max-width: $break-small-med) {width: 100%; height:auto;}
+							@media screen and (max-width: $break-small) {width: 100%; height:auto;}
+						}
+					}
+
 	        #nav_block_left_list{
-	           float:right;
+						position: absolute;
+						right:$spacing;
+	          align-self: flex-end;
+						 @media screen and (max-width: $break-large) {}
+						 @media screen and (max-width: $break-med-large) {}
+						 @media screen and (max-width: $break-medium) {}
+						 @media screen and (max-width: $break-small-med) {display:none;}
+						 @media screen and (max-width: $break-small) {display:none;}
+						 .current-menu-item a{
+							 opacity:1;
+						 }
 	        }
 	      }
 	      .nav_block_right {
@@ -161,17 +190,20 @@ figure{
 	        height: 100%;
 	        width: $right-proportion;
 					padding:$spacing;
-	        display: inline-block;
-	        float: right;
+					display: flex;
+					justify-content: flex-end;
 					.nav_block_right_submenu{
 						text-align: left;
 						display:block;
-						float:left;
+						width: 50%;
+						align-self: flex-end;
+
 					}
 	        .nav_block_right_options{
 	          font-size: .75em;
 	           text-align:right;
-	           float:right;
+						 width: 50%;
+						 align-self: flex-end;
 
 	           span, a{
 	             margin-right: 5px;
@@ -280,6 +312,11 @@ figure{
 				padding-bottom: $spacing;
 				display:none;
 				transition-duration: .5s;
+				@media screen and (max-width: $break-large) {}
+				@media screen and (max-width: $break-med-large) {}
+				@media screen and (max-width: $break-medium) {display:block;}
+				@media screen and (max-width: $break-small-med) {display:block;}
+				@media screen and (max-width: $break-small) {display:none;}
 			}
 
 			@mixin hoverStuff{
@@ -293,7 +330,6 @@ figure{
 				.collection_block_content{
 					height: 100%;
 					width: 100%;
-					// border-top: $border $dpurple;
 					background-color: $dpurple;
 					display:flex;
 					flex-wrap: nowrap;
@@ -360,9 +396,13 @@ figure{
 	        height: 100%;
 	        width: 100%;
 	        display: inline-block;
-					border-top: $border $dblue;
 					display: flex;
 					flex-wrap: nowrap;
+					@media screen and (max-width: $break-large) {}
+					@media screen and (max-width: $break-med-large) {}
+					@media screen and (max-width: $break-medium) {}
+					@media screen and (max-width: $break-small-med) {border:none;}
+					@media screen and (max-width: $break-small) {}
 					.img_wrap_link{
 						display: block;
 						height:100%;
@@ -464,7 +504,6 @@ figure{
 					flex-direction: column;
 					// align-items: center;
 	        float: right;
-					border-top: $border $dbrown;
 					padding: 0 $spacing*4 0 $spacing*4;
 
 					@media screen and (max-width: $break-small-med) {display:none;}
@@ -544,20 +583,18 @@ figure{
 			.block_title {
 				width: 100%;
 				display: inline-block;
-				// height:75px;
 				height:auto;
 				text-align:left;
 				color: $dpurple;
 				padding: $spacing 0 $spacing $spacing;
-				border-top: $border $dpurple;
+				// border-top: $border $dpurple;
 				}
 
 			#item_block {
 				display:flex;
-				// height: auto;
-				// height:400px;
 
-				// max-height:400px;
+				@media screen and (max-width: $break-small-med) {display: block; width: 100%; height:300px; flex-wrap: wrap; background-color: $dpurple}
+				@media screen and (max-width: $break-small) {}
 
 				.detailsOpen{
 					height:auto !important;
@@ -566,17 +603,18 @@ figure{
 
 				.item_block_left {
 					position: relative;
-					height: 100%;
+					// height: 100%;
 					width: $left-proportion;
 					background: $lpurple;
 					display: inline-block;
-					border-top: $border white;
 					min-height:400px;
-					// img{
-					// 	width: 100%;
-					// 	height:100%;
-					// 	display:inline-block;
-					// }
+
+					@media screen and (max-width: $break-large) {min-height: 400px;}
+					@media screen and (max-width: $break-med-large) {}
+					@media screen and (max-width: $break-medium) {min-height: 325px;}
+					@media screen and (max-width: $break-small-med) {/*display: block;*/ width: 100%; height:200px; min-height: 0px;}
+					@media screen and (max-width: $break-small) {}
+
 				}
 				.item_block_right_selected{
 					background: white !important;
@@ -596,6 +634,14 @@ figure{
 					color:white;
 					padding: $spacing;
 					min-height:400px;
+
+					@media screen and (max-width: $break-large) {min-height: 400px;}
+					@media screen and (max-width: $break-med-large) {}
+					@media screen and (max-width: $break-medium) {min-height: 325px;}
+					@media screen and (max-width: $break-small-med) {width: 100%; height: auto; min-height: 0px; border-top: 0px; border-bottom: $border white;}
+					@media screen and (max-width: $break-small) {}
+
+
 					.item_block_right_header{
 						display: flex;
 						flex-wrap: wrap;
@@ -606,6 +652,14 @@ figure{
 						#product_subtitle, .item_block_right_viewoptions{
 							width: 50%;
 							line-height: 2em;
+
+							.showhide{
+								display: inline-block;
+							}
+
+							#hideOptions{
+								display: none;
+							}
 						}
 						.item_block_right_viewoptions{
 							text-align: right;
@@ -627,6 +681,12 @@ figure{
 					// }
 					.item_block_right_details{
 						display:none;
+
+						@media screen and (max-width: $break-large) {}
+						@media screen and (max-width: $break-med-large) {}
+						@media screen and (max-width: $break-medium) {}
+						@media screen and (max-width: $break-small-med) {}
+						@media screen and (max-width: $break-small) {}
 						.item_block_right_details_show{
 							display: flex;
 							flex-direction: row;
@@ -666,7 +726,7 @@ figure{
 
 			#maak_announcement_block {
 				.maak_announcement_img {
-					height: 100vh;
+					height: calc(100vh - 100px);
 					width: $left-proportion;
 					display: inline-block;
 					// background: $dbrown;
@@ -679,7 +739,7 @@ figure{
 					@media screen and (max-width: $break-large) {}
 				}
 				.maak_announcement_text {
-					height: 100vh;
+					height: calc(100vh - 100px);
 					width: $right-proportion;
 					display: inline-flex;
 					flex-direction:column;
@@ -712,8 +772,7 @@ figure{
 				padding:0;
 				display:flex;
 				flex-wrap:wrap;
-				border-top: $border $dpurple;
-				// border-bottom: $border $dpurple;
+				border-bottom: $border $dpurple;
 				cursor: default;
 				transition-duration: 5s;
 				.catalog_content_banner{
@@ -749,102 +808,188 @@ figure{
 
 			//////// OVER ////////
 
-			.over_block {
-		       position: absolute;
-		       display: flex;
-		       top: 300px;
-		       // height: calc(70vh - 100px);
-					 height: auto;
-		       width: 80%;
-		       z-index: 100;
-		       margin-left: $spacing;
-		       flex-flow: row noWrap;
-		       justify-content: flex-start;
-		       align-items: flex-start;
-		       align-content: flex-start;
-		       min-height: 200px;
-					 overflow-y: hidden;
-					 #fourOfour{
-						 font-size: 7em;
-						 font-weight: bold;
-					 }
-					 .fourOfourText{
-						 // flex-direction: column;
-						 // justify-content: center;
-					 }
-		       // @media screen and (max-width: $break-medium) {
-		       //   height: calc(85vh - 100px);
-		       // }
-		       p {
-		         width: 40%;
-						 margin-left: $spacing;
+			.over_main{
+				display: flex;
+				@media screen and (max-width: $break-large) {}
+				@media screen and (max-width: $break-med-large) {}
+				@media screen and (max-width: $break-medium) {}
+				@media screen and (max-width: $break-small-med) {height:auto; flex-direction: column;}
+				@media screen and (max-width: $break-small) {}
+				.over_block {
+			       position: absolute;
+			       display: flex;
+			       top: 300px;
+			       // height: calc(70vh - 100px);
+						 height: auto;
+			       width: 80%;
+			       z-index: 100;
+			       margin-left: $spacing;
+			       flex-flow: row noWrap;
+			       justify-content: flex-start;
+			       align-items: flex-start;
+			       align-content: flex-start;
+			       min-height: 200px;
+						 overflow-y: hidden;
+			       p {
+			         width: 40%;
+							 margin-left: $spacing;
+							 font-size: .75em;
+							 line-height: 1.75em;
+			       }
+			       h2 {
+			         width: 60%;
+			         margin-left: $spacing;
+			       }
+			     }
+			     .over_bg_block {
+			       position: relative;
+			       height: calc(100vh - 100px);
+			       display: inline-block;
+			       background: white;
+			       border-top: $border $dpurple;
+			       z-index: 1;
+			       // min-height: 300px;
+						 @media screen and (max-width: $break-large) {}
+						 @media screen and (max-width: $break-med-large) {}
+						 @media screen and (max-width: $break-medium) {}
+						 @media screen and (max-width: $break-small-med) {height:auto; flex-direction: column; width:100%; border: 0px;}
+						 @media screen and (max-width: $break-small) {}
+			     }
+			     #over_bg_block_left {
+			       width: $left-proportion;
+			       border-right: $border $dpurple;
+						 position: relative;
+						 @media screen and (max-width: $break-large) {}
+						 @media screen and (max-width: $break-med-large) {}
+						 @media screen and (max-width: $break-medium) {}
+						 @media screen and (max-width: $break-small-med) {width:100%; border-right: 0px;}
+						 @media screen and (max-width: $break-small) {}
+
+			       .bg_topContent {
+							 position: absolute;
+			         height: $spacing*3;
+			         width: 10%;
+			         margin: 0 45% 0 45%;
+			         border-bottom: $border $dpurple;
+							 @media screen and (max-width: $break-small-med) {display: none;}
+			       }
+						 .bg_middleContent{
+							 position: absolute;
+							 margin: $spacing*10 $spacing*2 $spacing $spacing*2;
+							 font-size: .75em;
+							 line-height: 1.75em;
+							 font-weight: normal;
+							 @media screen and (max-width: $break-large) {}
+							 @media screen and (max-width: $break-med-large) {}
+							 @media screen and (max-width: $break-medium) {}
+							 @media screen and (max-width: $break-small-med) {position: relative; margin: $spacing $spacing*2 $spacing $spacing*2;}
+							 @media screen and (max-width: $break-small) {}
+
+							 #fourOfour{
+								 font-size: 7em;
+								 font-weight: bold;
+								 text-align: center;
+								 align-self: center;
+								 @media screen and (max-width: $break-small-med) {text-align: center;}
+				 				 @media screen and (max-width: $break-small) {}
+
+
+							 }
+						 }
+			       .bg_bottomContent {
+			         position: absolute;
+			         bottom: 0;
+			         height: $spacing*3;
+			         width: 10%;
+			         margin: 0 45% 0 45%;
+			         border-top: $border $dpurple;
+							 @media screen and (max-width: $break-small-med) {display: none;}
+			       }
+			     }
+			     #over_bg_block_right {
+						 position: relative;
+			       width: $right-proportion;
+						 color: $dpurple;
 						 font-size: .75em;
-						 line-height: 1.75em;
-		       }
-		       h2 {
-		         width: 60%;
-		         margin-left: $spacing;
-		       }
-		     }
-		     .over_bg_block {
-		       position: relative;
-		       height: calc(100vh - 100px);
-		       display: inline-block;
-		       background: white;
-		       border-top: $border $dpurple;
-		       z-index: 1;
-		       min-height: 300px;
-		     }
-		     #over_bg_block_left {
-		       width: $left-proportion;
-		       border-right: $border $dpurple;
-		       .bg_topContent {
-		         height: 10%;
-		         width: 10%;
-		         margin: 0 45% 0 45%;
-		         border-bottom: $border $dpurple;
-		       }
-		       .bg_bottomContent {
-		         position: absolute;
-		         bottom: 0;
-		         height: 10%;
-		         width: 10%;
-		         margin: 0 45% 0 45%;
-		         border-top: $border $dpurple;
-		       }
-		       @media screen and (max-width: $break-small) {
-		         width:100%;
-		         display:inline-block;
-		       }
-		     }
-		     #over_bg_block_right {
-		       width: $right-proportion;
-		       float: right;
-					 color: $dpurple;
-					 font-size: .75em;
-					 font-weight: 700;
-		       .bg_topContent {
-		         height: auto;
-		         width: 100%;
-		         text-align: center;
-		         margin-top: 10%;
-		       }
-		       .bg_bottomContent {
-		         position: absolute;
-		         bottom: 0;
-		         height: auto;
-		         width: 100%;
-		         text-align: center;
-		         margin-bottom: 10%;
-						 padding: 0 $spacing*2 0 $spacing*2;
+						 font-weight: 700;
+						 @media screen and (max-width: $break-large) {}
+						 @media screen and (max-width: $break-med-large) {}
+						 @media screen and (max-width: $break-medium) {}
+						 @media screen and (max-width: $break-small-med) {width:100%}
+						 @media screen and (max-width: $break-small) {}
+
+			       .bg_topContent {
+							 position: absolute;
+			         height: auto;
+			         width: 100%;
+			         text-align: center;
+			         margin-top: $spacing*3;
+							 @media screen and (max-width: $break-small-med) {display: none;}
+							 p{
+								 margin: 0 0 $spacing*.5 0;
+							 }
+			       }
+						 .bg_middleContent{
+							 position: absolute;
+							 margin: $spacing*10 $spacing*2 $spacing $spacing*2;
+							 // font-size: .75em;
+							 line-height: 1.75em;
+							 font-weight: normal;
+							 color: black;
+							 width: 60%;
+
+							 @media screen and (max-width: $break-large) {}
+			 				 @media screen and (max-width: $break-med-large) {}
+			 				 @media screen and (max-width: $break-medium) {}
+			 				 @media screen and (max-width: $break-small-med) {position: relative; width: auto; margin: 0 $spacing*2 $spacing $spacing*2;}
+			 				 @media screen and (max-width: $break-small) {}
+
+							 .fourOfourText{
+								 margin-top: $spacing*4;
+								 color: $dpurple;
+								 @media screen and (max-width: $break-small-med) {text-align: center; margin-top: 0;}
+				 				 @media screen and (max-width: $break-small) {}
+							 }
+						 }
+			       .bg_bottomContent {
+			         position: absolute;
+			         bottom: 0;
+			         height: auto;
+			         width: 100%;
+			         text-align: center;
+			         margin-bottom: $spacing*3;
+							 padding: 0 $spacing*2 0 $spacing*2;
+							 font-weight: 400;
+							 font-size: .75em;
+							 @media screen and (max-width: $break-small-med) {display: none;}
+			       }
+			       @media screen and (max-width: $break-small) {
+			         width:100%;
+			         display:inline-block;
+			       }
+			     }
+					 .over_header{
+						 display: none;
+						 border-top: $border $dpurple;
+						 padding-top: $spacing;
+						 color: $dpurple;
+						 font-size: .75em;
+						 font-weight: 700;
+						 text-align: center;
+
+						 @media screen and (max-width: $break-small-med) {display: block;}
+					 }
+					 .over_footer{
+						 display: none;
 						 font-weight: 400;
-						 font-size: .75em;
-		       }
-		       @media screen and (max-width: $break-small) {
-		         width:100%;
-		         display:inline-block;
-		       }
-		     }
+						 font-size: .5em;
+						 text-align: center;
+						 line-height: 1.25em;
+						 margin: $spacing $spacing*2 0 $spacing*2;
+						 color: $dpurple;
+						 @media screen and (max-width: $break-small-med) {display: block;}
+					 }
+			 }
 
 
 
@@ -857,6 +1002,8 @@ figure{
 	    #footer_block{
 				height:200px;
 				flex-shrink: 0;
+				@media screen and (max-width: $break-small-med) {height: 100px;}
+				@media screen and (max-width: $break-small) {}
 	       .footer_block_left {
 	        position: relative;
 	        height: 100%;
@@ -864,6 +1011,8 @@ figure{
 	        display: inline-block;
 					padding: $spacing*2;
 					border-right: $border $dpurple;
+					@media screen and (max-width: $break-small-med) {border-right: 0px solid; width:100%; padding: $spacing;}
+					@media screen and (max-width: $break-small) {}
 	        .footer_block_left_list{
 	          font-size: .6em;
 						line-height: 1.25em;
@@ -897,11 +1046,14 @@ figure{
 	        width: $right-proportion;
 	        display: inline-block;
 	        float: right;
-					border-top: $border $dpurple;
+					// border-top: $border $dpurple;
+					@media screen and (max-width: $break-small-med) {display:none;}
+					@media screen and (max-width: $break-small) {}
 					.footer_block_right_img{
 						width:100%;
 						height:100%;
 						background-color: $dpurple;
+
 						img{
 							@include blendies;
 							opacity:.4;
@@ -917,6 +1069,7 @@ figure{
 							background: $dbrown;
 							color: white;
 							border-right: $border white !important;
+							@media screen and (max-width: $break-small-med) {border-right: 0px !important;}
 							.footer_block_left_list{
 								color:white;
 								a{
@@ -948,6 +1101,7 @@ figure{
 							background: $dblue !important;
 							color: white;
 							border-right: $border white !important;
+							@media screen and (max-width: $break-small-med) {border-right: 0px !important; border-top: $border white;}
 							.footer_block_left_list{
 								color:white;
 								a{
@@ -979,6 +1133,7 @@ figure{
 							background: $dpurple !important;
 							color: white;
 							border-right: $border white !important;
+							@media screen and (max-width: $break-small-med) {border-right: 0px !important; border-top: $border white;}
 							.footer_block_left_list{
 								color:white;
 								a{

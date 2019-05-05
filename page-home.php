@@ -30,12 +30,12 @@
 							if( have_rows('prods' , 2) ): while( have_rows('prods' , 2) ): the_row();
 
 								// check for rows (sub repeater) // loop through rows (sub repeater)
-								if( have_rows('indivProd' , 2) ): while( have_rows('indivProd' , 2) ): the_row();
+								if( have_rows('indivProd') ): while( have_rows('indivProd') ): the_row();
 
 								// get_sub_field('images' , 2);
-								get_sub_field('prods' , 2);
-								get_sub_field('indivProd' , 2);
-								$images = get_sub_field('images' , 2);
+								get_sub_field('prods');
+								get_sub_field('indivProd');
+								$images = get_sub_field('images');
 								$firstImage = $images[0];
 
 								?>
@@ -94,8 +94,8 @@
 	 		</a>
 		 <div class="maak_block_content">
 			 <div class="maak_block_content_top"></div>
-			 <p>Houd je van leer, leren tassen en wil je zelf je tas maken? Neem alvast contact op, dit wordt namelijk binnenkort mogelijk!</p>
-			 <div class="maak_block_content_bottom" id="maak-link"><h3><a href="<?php echo get_template_directory_uri(); ?> /maak"> Binnenkort beschikbaar</a></h3></div>
+			 <p><?php the_field('maak_text'); ?></p>
+			 <div class="maak_block_content_bottom" id="maak-link"><h3><a href="<?php echo get_template_directory_uri(); ?> /maak"><?php the_field('maak_link_text'); ?></a></h3></div>
 		 </div>
 		</div>
 

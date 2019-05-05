@@ -31,59 +31,62 @@
         </script>
 
 	</head>
+
 	<body class="site" <?php body_class(); ?>>
 
 		<!-- wrapper -->
 		<div class="wrapper">
 
-			<!-- header -->
-			<!-- <header class="header clear" role="banner"> -->
-
-					<!-- logo -->
-					<!-- <div class="logo">
-						<a href="<?php echo home_url(); ?>"> -->
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div> -->
-					<!-- /logo -->
-
-
-
 						<div class="container">
 
 							<!-- nav -->
-							<nav class="nav blue_nav" role="navigation">
+							<nav class="nav home_nav" role="navigation">
 							  <div class=" cf" id="nav_block">
 							    <div class="nav_block_left cf">
-										<a href="<?php echo get_home_url(); ?>" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo-w.svg" alt="Ditt Bags Logo" class="logo-img"></a>
-										 <?php html5blank_nav(); ?>
+										<a href="" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img"></a>
 							    </div>
 							    <div class="nav_block_right cf">
-										<ul class="nav_block_right_submenu">
-
-											<?php
-											if( have_rows('portfolio_section') ): while ( have_rows('portfolio_section') ) : the_row();
-
-												$title = get_sub_field('section_title');
-												// this takes the title of the section and converts it to lowercase, no spaces, to become a valid ID
-												$titleId = preg_replace('/\W+/','',strtolower(strip_tags($title)));
-
-													echo '<li><a href="#'.$titleId.'">'.$title.'</a></li>';
-
-												endwhile;
-											 endif;
-											?>
-
-										</ul>
 							      <div class="nav_block_right_options">
-											 <a href="<?php echo get_page_link(15); ?>">info.</a><!--<span>nl</span><span>/</span><span>en</span> -->
 							      </div>
 							    </div>
 							  </div>
 							</nav>
 
-					<!-- /nav -->
+	<main role="main" class="over_main">
 
-			<!-- </header> -->
-			<!-- /header -->
+		<div class="over_header">
+			<?php
+				if( have_rows('contact_details', 15) ): while ( have_rows('contact_details', 15) ) : the_row();
+					$detail = get_sub_field('detail', 15);
+						echo '<p>'.$detail.'</p>';
+					endwhile;
+				 endif;
+				?>
+		</div>
+
+	 <div class="over_bg_block" id="over_bg_block_left">
+		 <div class="bg_topContent" id="bg_block_left_topContent"></div>
+		 <div class="bg_middleContent" id="bg_block_left_middleContent"><p>DITT is under construction.</p></div>
+		 <div class="bg_bottomContent" id="bg_block_left_bottomContent">
+		 </div>
+	 </div>
+
+		<div class="over_bg_block" id="over_bg_block_right">
+			<div class="bg_topContent" id="bg_block_left_topContent">
+			<?php
+				if( have_rows('contact_details', 15) ): while ( have_rows('contact_details', 15) ) : the_row();
+					$detail = get_sub_field('detail', 15);
+						echo '<p>'.$detail.'</p>';
+					endwhile;
+				 endif;
+				?>
+			</div>
+			<div class="bg_middleContent" id="bg_block_right_middleContent"><p><?php the_field('right_paragraph'); ?></p></div>
+			<div class="bg_bottomContent" id="bg_block_left_bottomContent"><?php the_field('credits', 15); ?></div>
+		</div>
+
+		<div class="over_footer">
+				<?php the_field('credits', 15); ?>
+		</div>
+
+	</main>

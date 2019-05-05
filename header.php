@@ -43,16 +43,11 @@
 							  <div class=" cf" id="nav_block">
 							    <div class="nav_block_left cf">
 										<a href="<?php echo get_home_url(); ?>" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/dittbags-logo.svg" alt="Ditt Bags Logo" class="logo-img"></a>
-							       <!-- <ul class="nav_block_left_list">
-							        <li>COLLECTIE</li>
-							        <li>PORTFOLIO</li>
-							        <li>MAAK</li>
-							       </ul> -->
 										 <?php html5blank_nav(); ?>
 							    </div>
 							    <div class="nav_block_right cf">
 							      <div class="nav_block_right_options">
-							        <a href="<?php echo get_page_link(15); ?>">over</a><span>nl</span><span>/</span><span>en</span>
+							         <a href="<?php echo get_page_link(15); ?>">info.</a><!--<span>nl</span><span>/</span><span>en</span> -->
 							      </div>
 							    </div>
 							  </div>

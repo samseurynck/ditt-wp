@@ -22,10 +22,10 @@
     wp_enqueue_script('jquery-ui');
 
     // THESE SHOULD BE SWAPPED AT SOME POINT!!
-    // wp_enqueue_script( 'plugins', "{$url}plugins.min.js", array('jquery'), null, true );
-    // wp_enqueue_script( 'app', "{$url}app.min.js", array('jquery'), null, true );
-    wp_enqueue_script( 'plugins', "{$url}/x/plugins.js", array('jquery'), null, true );
-    wp_enqueue_script( 'app', "{$url}/x/app.js", array('jquery'), null, true );
+    wp_enqueue_script( 'plugins', "{$url}plugins.min.js", array('jquery'), null, true );
+    wp_enqueue_script( 'app', "{$url}app.min.js", array('jquery'), null, true );
+    // wp_enqueue_script( 'plugins', "{$url}/x/plugins.js", array('jquery'), null, true );
+    // wp_enqueue_script( 'app', "{$url}/x/app.js", array('jquery'), null, true );
   }
 
   $ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
@@ -50,25 +50,6 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -362,6 +343,8 @@ function html5blankcomments($comment, $args, $depth)
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
+
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
