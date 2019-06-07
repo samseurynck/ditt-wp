@@ -3011,12 +3011,27 @@ body {
       body .container #item_block .detailsOpen {
         height: auto !important;
         min-height: 400px; }
+      body .container #item_block #ibl_selected {
+        display: none;
+        height: 100%; }
+        body .container #item_block #ibl_selected .item_block_left_gallery_container {
+          position: relative;
+          height: 100%;
+          display: flex; }
+          body .container #item_block #ibl_selected .item_block_left_gallery_container .item_block_left_gallery_item {
+            position: relative;
+            height: 100%;
+            width: auto; }
       body .container #item_block .item_block_left {
         position: relative;
         width: 40%;
         background: #DDD4D7;
         display: inline-block;
-        min-height: 400px; }
+        min-height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden; }
         @media screen and (max-width: 1024px) {
           body .container #item_block .item_block_left {
             min-height: 400px; } }

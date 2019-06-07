@@ -34,21 +34,40 @@
 																		$loopCount = 0;
 																		$len = count($images);
 
-																		foreach ($images as $image):
-																			if ($i == $len - 1) {
-																				$imgStringArray .= $image['url'];
-																	    } else {
-																				$imgStringArray .= $image['url'].', ';
-																			}
-																			$loopCount++;
-																		endforeach;
+																		// Makes the array of image URLs (probably don't need this anymore)
+																		// foreach ($images as $image):
+																		// 	if ($i == $len - 1) {
+																		// 		$imgStringArray .= $image['url'];
+																	  //   } else {
+																		// 		$imgStringArray .= $image['url'].', ';
+																		// 	}
+																		// 	$loopCount++;
+																		// endforeach;
 
+																		?>
+
+																		<div class="item_block_left" id="ibl_selected">
+																			<div class="item_block_left_gallery_container">
+																				<?php
+																				// This creates the horizontal scrolling gallery
+																				foreach ($images as $image):
+																					echo '<img class="item_block_left_gallery_item" src="'.$image['url'].'">';
+																					$loopCount++;
+																				endforeach;
+																				?>
+																			</div>
+																		</div>
+
+																		<?php
 																		$html .=	'<div>'.
 																								'<h1>Title</h1>'.
 																							'</div>';
 
+																	// This is the first image block
+																	// echo '<div class="item_block_left ibl_unselected" data-image-src="" data-image-array="'.$imgStringArray.'"></div>';
+																	echo '<div class="item_block_left bstretchMe" id="ibl_unselected" data-image-src="' .$firstImage['url']. '"></div>';
 
-																	echo '<div class="item_block_left" data-image-src="" data-image-array="'.$imgStringArray.'"></div>';
+
 
 																		$productName = get_sub_field('product_name');
 		                                $productType = get_sub_field('product_type');
@@ -60,10 +79,10 @@
 																			<li id="product_title"><?php echo $productName; ?></li>
 																			<li id="product_subtitle"><?php echo $productType; ?></li>
 		                                    <!-- <ul class="item_block_right_header_list">
-		                                        <li id="product_title"><?php echo $productName; ?></li>
-		                                        <li id="product_subtitle"><?php echo $productType; ?></li>
+		                                        <li id="product_title"><?php // echo $productName; ?></li>
+		                                        <li id="product_subtitle"><?php // echo $productType; ?></li>
 		                                    </ul> -->
-		                                	<div class="item_block_right_viewoptions"><span class="showhide" id="showOptions">show</span><span class="showhide" id="hideOptions">hide</span> details</div>
+		                                	<div class="item_block_right_viewoptions"><span class="showhide" id="showOptions">show details</span><span class="showhide" id="hideOptions">hide details</span></div>
 																		</div>
 
 			                            <div class="item_block_right_details item_block_right_details_hide cf">

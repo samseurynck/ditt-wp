@@ -30,60 +30,121 @@ var ditt = {
       });
     })
 
-    var clicked = false;
+    // $('.item_block_left').each(function() {
+    //
+    //   var imgArrayString = $(this).data('image-array');
+    //   var imgArray = imgArrayString.split(',');
+    //   var heroImage = imgArray[0];
+    //
+    //   console.log(imgArray);
+    //
+    //     // originally goes here
+    //     // $(this).backstretch(imgArray, {fade: 200, duration: 1000});
+    //
+    //     // displays first image in the array instead
+    //     $(this).backstretch(heroImage, {fade: 200});
+    //
+    // })
 
-    $('.item_block_left').each(function() {
 
-      var imgArrayString = $(this).data('image-array');
-      var imgArray = imgArrayString.split(',');
-      var heroImage = imgArray[0];
+    $(".item_block_left_gallery_container").draggable({
+      cursor: "move",
+      containment: "parent",
+/*     stop: function() {
+      if(jQuery("#child").position().left < 1)
+          jQuery("#child").css("left", "720px");
+    }*/
+  });
 
-      console.log(imgArray);
 
-        // originally goes here
-        // $(this).backstretch(imgArray, {fade: 200, duration: 1000});
-
-        // displays first image in the array instead
-        $(this).backstretch(heroImage, {fade: 200});
-
-    })
-
-    var instance = $(".item_block_left").data("backstretch");
+    var open = false;
+    console.log('status is', open);
 
     // COLLECTIE PAGE TOGGLES
     $('.item_block_right_viewoptions').click(function() {
 
-      clicked = !clicked;
+      open = !open;
+      console.log('status is', open);
 
-      var isVisible = $( "#showOptions" ).is( ":visible" );
-      var isHidden = $( "#showOptions" ).is( ":hidden" );
+      var maxMaxHeight = '400px';
 
-      $(this)
-        .find('#showOptions').toggle();
+      // YOU WERE TRYING THIS METHOD LAST YESTERDAY
+      $(this).closest('#item_block', function(){
+         if ($(this).height() > maxHeight) { maxMaxHeight = $(this).height(); }
+      });
 
-      $(this)
-        .find('#hideOptions').toggle();
+      $(this).closest('#item_block').height(maxMaxHeight);
+      console.log(maxMaxHeight);
 
-        $("#showOptions:visible").css('display', 'inline-block');
-        $("#hideOptions:visible").css('display', 'inline-block');
 
+      // toggles text 'show details' and 'hide details'
+      $(this).find('#showOptions').toggle();
+      $(this).find('#hideOptions').toggle();
+
+      // toggles 'selected' class on .item_block_right
       $(this)
         .closest('.item_block_right')
         .toggleClass('item_block_right_selected');
 
+        // toggles product details
         $(this)
           .closest('.item_block_right')
             .find('.item_block_right_details')
-              .slideToggle(function() {
-          instance.resize();
-        });
+              .slideToggle();
+
+        // backs up three parent levels, searches for, then toggles selected/unselected galleries
+        $(this)
+          .parent().parent().parent()
+            .find( "#ibl_unselected" )
+              .toggle();
+
+        $(this)
+          .parent().parent().parent()
+            .find( "#ibl_selected" )
+              .toggle();
+
+
+        // allows block to resize to fit content
+        $('.block').toggleClass(function() {});
+
+        // KEEP ME I AM WORKING
+        // var $ht = $(this).closest('.item_block_right').outerHeight();
+        // console.log('outer height', $ht);
+        //
+        // $(this).parent().parent().parent().height($ht);
+
+
+
 
         $(this)
           .toggleClass('item_block_right_viewoptions_selected');
 
-      $('.block').toggleClass(function() {
 
-      });
+         //  if (status == false) {
+         //   // $(this).parent().parent().parent().height('$ht');
+         //
+         //   var $ht = $(this).closest('.item_block_right').outerHeight();
+         //   console.log('outer height', $ht);
+         //
+         //   $(this).parent().parent().parent().stop().animate().height('$ht');
+         //   // $(this).css("background", "blue");
+         //   console.log($(this).parent().parent().parent().height());
+         // }
+         //  else if (status == true) {
+         //     $(this).parent().parent().parent().stop().animate().height('400px');
+         //     // $(this).css("background", "yellow");
+         //     console.log($(this).parent().parent().parent().height());
+         //  }
+
+
+        // not sure what these do. Might be able to delete.
+
+        // var isVisible = $( "#showOptions" ).is( ":visible" );
+        // var isHidden = $( "#showOptions" ).is( ":hidden" );
+
+        // $(this)
+        //   $("#showOptions:visible").css('display', 'inline-block');
+        //   $("#hideOptions:visible").css('display', 'inline-block');
 
     });
 
