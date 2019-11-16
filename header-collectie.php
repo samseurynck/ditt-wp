@@ -8,6 +8,9 @@
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
+				<?php $url = get_stylesheet_directory_uri() . '/css/owl-carousel/scss/owl.carousel.css'; ?>
+				<link rel="stylesheet" href="<?php echo $url ?>">
+
 		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

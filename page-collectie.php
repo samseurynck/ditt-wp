@@ -20,7 +20,7 @@
 		            <?php while (have_rows('prods')): ?>
 		                <?php the_row(); ?>
 		                <?php $products = get_sub_field('prods'); ?>
-		                <div class="block" id="item_block">
+		                <div class="block item_block" id="">
 		                    <?php if (have_rows('indivProd')): ?>
 		                        <?php while (have_rows('indivProd')): the_row();
 
@@ -48,13 +48,24 @@
 
 																		<div class="item_block_left" id="ibl_selected">
 																			<div class="item_block_left_gallery_container">
-																				<?php
-																				// This creates the horizontal scrolling gallery
-																				foreach ($images as $image):
-																					echo '<img class="item_block_left_gallery_item" src="'.$image['url'].'">';
-																					$loopCount++;
-																				endforeach;
-																				?>
+																				<!-- <div class="item_block_left_gallery owl-carousel"> -->
+																					<?php
+																					// This creates the horizontal scrolling gallery
+																					foreach ($images as $image):
+																						echo '<img class="item_block_left_gallery_item" src="'.$image['url'].'">';
+																						$loopCount++;
+																					endforeach;
+																					?>
+
+																					<?php
+																					// // This creates the NEW horizontal scrolling gallery
+																					// foreach ($images as $image):
+																					// 	echo '<img class="item" src="'.$image['url'].'"></img>';
+																					// 	$loopCount++;
+																					// endforeach;
+																					?>
+
+																				<!-- </div> -->
 																			</div>
 																		</div>
 

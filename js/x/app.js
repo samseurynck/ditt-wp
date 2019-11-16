@@ -30,6 +30,16 @@ var ditt = {
       });
     })
 
+    // $('.owl-carousel').owlCarousel({
+    //     margin:0,
+    //     loop:true,
+    //     navigation : false,
+    //     pagination: false,
+    //     autoWidth:true,
+    //     // autoHeight:true,
+    //     items:1
+    // })
+
     // $('.item_block_left').each(function() {
     //
     //   var imgArrayString = $(this).data('image-array');
@@ -47,14 +57,17 @@ var ditt = {
     // })
 
 
-    $(".item_block_left_gallery_container").draggable({
-      cursor: "move",
-      containment: "parent",
-/*     stop: function() {
-      if(jQuery("#child").position().left < 1)
-          jQuery("#child").css("left", "720px");
-    }*/
-  });
+    // CAN DELETE THESE IF GALLERY PLUGIN WORKS
+    //   $(".item_block_left_gallery").draggable({
+    //     // containment: "parent",
+    //     // containment: '.item_block_left_gallery_container',
+    //     scroll: false,
+    //     axis: "x",
+    //   //  stop: function() {
+    //   //   if($(this).position().left < 1)
+    //   //       $(this).css("right", "0px");
+    //   // }
+    // });
 
 
     var open = false;
@@ -62,6 +75,9 @@ var ditt = {
 
     // COLLECTIE PAGE TOGGLES
     $('.item_block_right_viewoptions').click(function() {
+      // $(this).closest('.item_block').toggleClass('opened_item_block')
+      // $('opened_item_block').css(height grab this value from the block on the right)
+      // add an if(heigh > 400px ) other wise you might end up with a 200px image
 
       open = !open;
       console.log('status is', open);
@@ -69,11 +85,13 @@ var ditt = {
       var maxMaxHeight = '400px';
 
       // YOU WERE TRYING THIS METHOD LAST YESTERDAY
-      $(this).closest('#item_block', function(){
+      $(this).closest('.item_block', function(){
          if ($(this).height() > maxHeight) { maxMaxHeight = $(this).height(); }
       });
 
-      $(this).closest('#item_block').height(maxMaxHeight);
+      // $(this).closest('#item_block').height(maxMaxHeight);
+      $(this).closest('.item_block').css('min-height', maxMaxHeight);
+
       console.log(maxMaxHeight);
 
 
